@@ -1,6 +1,5 @@
 import {
   AppBar,
-  Button,
   ButtonGroup,
   CircularProgress,
   createStyles,
@@ -107,9 +106,9 @@ const Navbar = (): JSX.Element => {
         variables: { message: debouncedSearchTerm },
       });
     }
-    if (searchInput.length < 1) {
-      getNotes();
-    }
+    // if (searchInput.length < 1) {
+    //   getNotes();
+    // }
   }, [debouncedSearchTerm, getNotes, searchInput]);
 
   return (

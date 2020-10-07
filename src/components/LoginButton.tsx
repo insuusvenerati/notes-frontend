@@ -1,8 +1,9 @@
 import { Button } from "@material-ui/core";
+import { Dispatch, SetStateAction } from "react";
 
 type LoginButtonTypes = {
   token: string;
-  setSigninOpen: () => void;
+  setSigninOpen: Dispatch<SetStateAction<boolean>>;
   signOut: () => void;
 };
 

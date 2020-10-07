@@ -5,7 +5,7 @@ import React from "react";
 import myTheme from "../theme";
 
 type ThemeContextType = {
-  darkState: "dark" | "light";
+  darkState: string;
   setDarkState: (value: string) => void;
 };
 

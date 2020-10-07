@@ -1,5 +1,4 @@
 import { useMutation } from "@apollo/client";
-import { GraphQLError } from "graphql";
 import { useRouter } from "next/router";
 import { LOGIN } from "queries/notes";
 import { Login, LoginVariables } from "queries/__generated__/Login";
@@ -7,16 +6,13 @@ import { createContext, Dispatch, SetStateAction, useState } from "react";
 import { useCookies } from "react-cookie";
 
 type AuthContextType = {
-  userNameToLocalStorage: string;
-  setUserNameToLocalStorage: (value: string) => void;
   signOut: () => void;
   signIn: () => void;
-  token: string;
   signinOpen: boolean;
   setSigninOpen: Dispatch<SetStateAction<boolean>>;
   signinError: {
     statusCode: number;
-    message: GraphQLError[];
+    message: string;
     error: boolean;
   };
   signinDetails: {
@@ -45,7 +41,7 @@ export const AuthContextProvider: React.FC = ({ children }) => {
   });
   const [signinError, setSigninError] = useState({
     statusCode: 200,
-    message: [],
+    message: "",
     error: false,
   });
   const [login, { error: loginError, data: loginData }] = useMutation<Login, LoginVariables>(LOGIN);
@@ -67,16 +63,20 @@ export const AuthContextProvider: React.FC = ({ children }) => {
       });
 
     if (loginError) {
-      setSigninError({ message: loginError.graphQLErrors, statusCode: 400, error: true });
+      setSigninError({
+        message:
+          loginError?.graphQLErrors[0]?.extensions?.exception.data.message[0].messages[0].message,
+        statusCode: 400,
+        error: true,
+      });
     }
 
-    loginData?.login.jwt &&
-      loginData?.login.user.username &&
-      loginData?.login.user.id &&
+    if (loginData?.login.jwt && loginData?.login.user.username && loginData?.login.user.id) {
       setCookie("user", loginData?.login.user.username);
-    setCookie("token", loginData?.login.jwt);
-    setCookie("id", loginData?.login.user.id);
-    setSigninOpen(false);
+      setCookie("token", loginData?.login.jwt);
+      setCookie("id", loginData?.login.user.id);
+      setSigninOpen(false);
+    }
   }
 
   return (

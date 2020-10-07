@@ -59,10 +59,18 @@ const NotesPage = ({ data: notes }: NotesProps): JSX.Element => {
 export default NotesPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await request<{ notes: Notes_notes[] }>(
-    `${process.env.NEXT_PUBLIC_API_URL}/graphql`,
-    GET_NOTES
-  );
+  let data;
+  try {
+    data = await request<{ notes: Notes_notes[] }>(
+      `${process.env.NEXT_PUBLIC_API_URL}/graphql`,
+      GET_NOTES
+    );
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+
   return {
     props: { data },
   };

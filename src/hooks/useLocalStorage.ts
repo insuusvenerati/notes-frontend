@@ -35,8 +35,6 @@ function useLocalStorage<T>(key: string, initialValue: T) {
   return [storedValue, setValue];
 }
 
-export function useSsrLocalStorage<T>(key: string, initialValue?: T): T | (() => void ){
-  return typeof window !== "undefined"
-    ? useLocalStorage(key, initialValue)
-    : [initialValue];
+export function useSsrLocalStorage<T>(key: string, initialValue?: T): any {
+  return typeof window !== "undefined" ? useLocalStorage(key, initialValue) : [initialValue];
 }

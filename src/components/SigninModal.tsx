@@ -48,10 +48,11 @@ export const SignInModal = (): JSX.Element => {
             fullWidth
             error={signinError.error}
           />
-          {signinError.message &&
+          {/* {signinError.message &&
             signinError.message.map((error, i) => (
               <p key={i}> {error?.extensions?.exception.data.message[0].messages[0].message} </p>
-            ))}
+            ))} */}
+          {signinError && signinError.message}
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setSigninOpen(false)}>Cancel</Button>
