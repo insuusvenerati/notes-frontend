@@ -1,0 +1,60 @@
+{
+  "name": "@stiforr/frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.2.1",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@material-ui/styles": "^4.10.0",
+    "@next/bundle-analyzer": "^9.5.3",
+    "axios": "^0.20.0",
+    "clsx": "^1.1.1",
+    "dotenv": "^8.2.0",
+    "graphql": "^15.3.0",
+    "graphql-request": "^3.1.0",
+    "js-cookie": "^2.2.1",
+    "next": "^9.5.3",
+    "next-cookies": "^2.0.3",
+    "next-pwa": "^3.1.5",
+    "react": "^16.13.1",
+    "react-cookie": "^4.0.3",
+    "react-dom": "^16.13.1",
+    "react-error-boundary": "^3.0.2",
+    "tailwindcss": "^1.8.10",
+    "typescript": "~4.0.3"
+  },
+  "scripts": {
+    "next:dev": "next dev",
+    "next:build": "yarn build:tailwind && next build",
+    "next:start": "next start",
+    "build:tailwind": "cross-env NODE_ENV=production tailwind build ./tailwind.css -o src/assets/tailwind.css",
+    "build:tailwind-dev": "tailwind build ./tailwind.css -o src/assets/tailwind.css",
+    "codegen": "apollo client:codegen --target typescript --watch"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^2.2.6",
+    "@types/node": "^14.11.2",
+    "@types/react": "^16.9.50",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.3.0",
+    "@typescript-eslint/parser": "^4.3.0",
+    "apollo": "^2.31.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.10.0",
+    "eslint-plugin-react": "^7.21.3"
+  }
+}
