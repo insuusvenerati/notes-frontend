@@ -3,11 +3,13 @@ import { useQuery } from "@apollo/client";
 import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core";
 import { DynamicError, DynamicNotes } from "components/DynamicComponents";
 import { NotesContext } from "context/notes";
-import { request } from "graphql-request";
+import { GraphQLClient, request } from "graphql-request";
 import { GetStaticProps } from "next";
 import { GET_NOTES } from "queries/notes";
 import { Notes as NotesQuery, Notes_notes } from "queries/__generated__/Notes";
 import { useContext } from "react";
+import Cookies from "js-cookie";
+import { authClient } from "context/apollo";
 
 type NotesProps = {
   data: NotesQuery;
@@ -25,7 +27,7 @@ const SelectComponent = (): JSX.Element => (
 );
 
 const NotesPage = ({ data: notes }: NotesProps): JSX.Element => {
-  const { data, error } = useQuery<NotesQuery>(GET_NOTES);
+  const { data, error } = useQuery<NotesQuery>(GET_NOTES, { client: authClient });
   const { data: searchData } = useContext(NotesContext);
 
   if (error) {
@@ -59,12 +61,15 @@ const NotesPage = ({ data: notes }: NotesProps): JSX.Element => {
 export default NotesPage;
 
 export const getStaticProps: GetStaticProps = async () => {
+  const token = Cookies.get("token");
+  const graphQLClient = new GraphQLClient(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  });
   let data;
   try {
-    data = await request<{ notes: Notes_notes[] }>(
-      `${process.env.NEXT_PUBLIC_API_URL}/graphql`,
-      GET_NOTES
-    );
+    data = await graphQLClient.request(GET_NOTES);
   } catch (error) {
     return {
       props: {},

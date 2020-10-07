@@ -55,7 +55,7 @@ type NotesContextType = {
 export const NotesContext = createContext<NotesContextType>({} as NotesContextType);
 
 export const NotesContextProvider: React.FC = ({ children }) => {
-  const [getNotes, { data, loading, error }] = useLazyQuery<Note>(GET_NOTE);
+  const [getNotes, { data, loading, error }] = useLazyQuery<Note>(GET_NOTE, { client: authClient });
   const [addNoteForm, setNoteForm] = useState({
     title: "",
     message: "",
