@@ -44,7 +44,7 @@ export const AuthContextProvider: React.FC = ({ children }) => {
     message: "",
     error: false,
   });
-  const [login, { error: loginError, data: loginData }] = useMutation<Login, LoginVariables>(LOGIN);
+  const [login, { error: loginError }] = useMutation<Login, LoginVariables>(LOGIN);
 
   const router = useRouter();
 
@@ -60,22 +60,21 @@ export const AuthContextProvider: React.FC = ({ children }) => {
       signinDetails.password &&
       login({
         variables: { identifier: signinDetails.email, password: signinDetails.password },
+      }).then((res) => {
+        setCookie("token", res.data?.login.jwt);
+        setCookie("id", res.data?.login.user.id);
+        setCookie("user", res.data?.login.user.username);
+        setSigninOpen(false);
       });
 
     if (loginError) {
       setSigninError({
         message:
-          loginError?.graphQLErrors[0]?.extensions?.exception.data.message[0].messages[0].message,
+          loginError?.graphQLErrors[0]?.extensions?.exception?.data?.message[0]?.messages[0]
+            ?.message,
         statusCode: 400,
         error: true,
       });
-    }
-
-    if (loginData?.login.jwt && loginData?.login.user.username && loginData?.login.user.id) {
-      setCookie("user", loginData?.login.user.username);
-      setCookie("token", loginData?.login.jwt);
-      setCookie("id", loginData?.login.user.id);
-      setSigninOpen(false);
     }
   }
 

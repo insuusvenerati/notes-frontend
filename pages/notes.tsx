@@ -2,14 +2,14 @@
 import { useQuery } from "@apollo/client";
 import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core";
 import { DynamicError, DynamicNotes } from "components/DynamicComponents";
+import { authClient } from "context/apollo";
 import { NotesContext } from "context/notes";
-import { GraphQLClient, request } from "graphql-request";
+import { GraphQLClient } from "graphql-request";
+import Cookies from "js-cookie";
 import { GetStaticProps } from "next";
 import { GET_NOTES } from "queries/notes";
-import { Notes as NotesQuery, Notes_notes } from "queries/__generated__/Notes";
+import { Notes as NotesQuery } from "queries/__generated__/Notes";
 import { useContext } from "react";
-import Cookies from "js-cookie";
-import { authClient } from "context/apollo";
 
 type NotesProps = {
   data: NotesQuery;
@@ -47,10 +47,11 @@ const NotesPage = ({ data: notes }: NotesProps): JSX.Element => {
     );
   }
   if (notes) {
+    const token = Cookies.get("token");
     return (
       <>
         <SelectComponent />
-        <DynamicNotes data={notes} />
+        {token && <DynamicNotes data={notes} />}
       </>
     );
   }

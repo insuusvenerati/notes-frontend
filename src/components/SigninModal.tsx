@@ -56,13 +56,7 @@ export const SignInModal = (): JSX.Element => {
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setSigninOpen(false)}>Cancel</Button>
-          <Button
-            onClick={() => {
-              signIn();
-            }}
-          >
-            Submit
-          </Button>
+          <Button onClick={signIn}>Submit</Button>
         </DialogActions>
       </Dialog>
     </>
