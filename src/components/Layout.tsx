@@ -6,7 +6,7 @@ export const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Navbar />
-      <Box p={5}>{children}</Box>
+      <Box p={3}>{children}</Box>
     </>
   );
 };

@@ -6,13 +6,18 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
+import { Alert } from "@material-ui/lab";
 import { NotesContext } from "context/notes";
 import { useContext } from "react";
+import { useCookies } from "react-cookie";
 
 const AddNote = (): JSX.Element => {
+  const [cookies] = useCookies(["id"]);
   const { addNoteForm, setNoteForm, handleSubmit, addNoteError, addNoteLoading } = useContext(
     NotesContext
   );
+
+  if (!cookies.id) return <Alert severity="error">Please sign in</Alert>;
 
   return (
     <Grid container>

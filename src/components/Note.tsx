@@ -7,9 +7,11 @@ type NoteProps = {
 };
 
 const Note = ({ note }: NoteProps): JSX.Element => {
+  const date = new Date(note?.createdAt).toLocaleDateString();
   return (
     <Card>
       <CardHeader title={note?.title} subheader={note?.user?.username} />
+      <CardHeader subheader={date} />
       <CardContent>
         <h1>{note?.message}</h1>
       </CardContent>

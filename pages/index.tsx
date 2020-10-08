@@ -1,3 +1,9 @@
-const Index = (): JSX.Element => <h1>Home page</h1>;
+const Index = (): JSX.Element => {
+  return (
+    <>
+      <h1>Home Page</h1>
+    </>
+  );
+};
 
 export default Index;

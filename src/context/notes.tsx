@@ -9,7 +9,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { createContext, Dispatch, FormEvent, SetStateAction, useState } from "react";
-import { ADD_NOTE, GET_NOTE } from "../queries/notes";
+import { ADD_NOTE, GET_NOTE, GET_NOTES } from "../queries/notes";
 import { Note } from "../queries/__generated__/Note";
 import { Notes } from "../queries/__generated__/Notes";
 import Cookies from "js-cookie";
@@ -44,7 +44,7 @@ type NotesContextType = {
   data: Notes | undefined;
   loading: boolean;
   error: ApolloError | undefined;
-  getNotes: (options?: QueryLazyOptions<Record<string, any>> | undefined) => void;
+  getNote: (options?: QueryLazyOptions<Record<string, any>> | undefined) => void;
   setNoteForm: Dispatch<SetStateAction<{ title: string; message: string }>>;
   addNoteForm: NoteForm;
   handleSubmit: (event: FormEvent) => void;
@@ -55,7 +55,7 @@ type NotesContextType = {
 export const NotesContext = createContext<NotesContextType>({} as NotesContextType);
 
 export const NotesContextProvider: React.FC = ({ children }) => {
-  const [getNotes, { data, loading, error }] = useLazyQuery<Note>(GET_NOTE, { client: authClient });
+  const [getNote, { data, loading, error }] = useLazyQuery<Note>(GET_NOTE, { client: authClient });
   const [addNoteForm, setNoteForm] = useState({
     title: "",
     message: "",
@@ -80,7 +80,7 @@ export const NotesContextProvider: React.FC = ({ children }) => {
   return (
     <NotesContext.Provider
       value={{
-        getNotes,
+        getNote,
         data,
         loading,
         error,

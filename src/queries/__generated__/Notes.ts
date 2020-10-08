@@ -14,6 +14,7 @@ export interface Notes_notes_user {
 
 export interface Notes_notes {
   __typename: "Notes";
+  createdAt: any;
   id: string;
   title: string;
   message: string;

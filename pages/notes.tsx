@@ -1,6 +1,7 @@
 /* eslint-disable react/display-name */
 import { useQuery } from "@apollo/client";
 import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core";
+import { Alert } from "@material-ui/lab";
 import { DynamicError, DynamicNotes } from "components/DynamicComponents";
 import { authClient } from "context/apollo";
 import { NotesContext } from "context/notes";
@@ -10,6 +11,7 @@ import { GetStaticProps } from "next";
 import { GET_NOTES } from "queries/notes";
 import { Notes as NotesQuery } from "queries/__generated__/Notes";
 import { useContext } from "react";
+import { useCookies } from "react-cookie";
 
 type NotesProps = {
   data: NotesQuery;
@@ -27,8 +29,11 @@ const SelectComponent = (): JSX.Element => (
 );
 
 const NotesPage = ({ data: notes }: NotesProps): JSX.Element => {
+  const [cookies] = useCookies(["id"]);
   const { data, error } = useQuery<NotesQuery>(GET_NOTES, { client: authClient });
   const { data: searchData } = useContext(NotesContext);
+
+  if (!cookies.id) return <Alert severity="error"> Please sign in </Alert>;
 
   if (error) {
     return (
@@ -56,7 +61,15 @@ const NotesPage = ({ data: notes }: NotesProps): JSX.Element => {
     );
   }
 
-  return <>{data && <DynamicNotes data={data} />}</>;
+  return (
+    <>
+      {data && (
+        <>
+          <SelectComponent /> <DynamicNotes data={data} />
+        </>
+      )}
+    </>
+  );
 };
 
 export default NotesPage;
@@ -68,9 +81,9 @@ export const getStaticProps: GetStaticProps = async () => {
       authorization: `Bearer ${token}`,
     },
   });
-  let data;
+  let data: NotesQuery;
   try {
-    data = await graphQLClient.request(GET_NOTES);
+    data = await graphQLClient.request<NotesQuery>(GET_NOTES);
   } catch (error) {
     return {
       props: {},

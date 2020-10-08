@@ -4,27 +4,27 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: Note
+// GraphQL query operation: UserNote
 // ====================================================
 
-export interface Note_notes_user {
+export interface UserNote_notes_user {
   __typename: "UsersPermissionsUser";
   username: string;
 }
 
-export interface Note_notes {
+export interface UserNote_notes {
   __typename: "Notes";
+  title: string;
+  message: string;
   createdAt: any;
   id: string;
-  message: string;
-  title: string;
-  user: Note_notes_user | null;
+  user: UserNote_notes_user | null;
 }
 
-export interface Note {
-  notes: (Note_notes | null)[] | null;
+export interface UserNote {
+  notes: (UserNote_notes | null)[] | null;
 }
 
-export interface NoteVariables {
-  message?: string | null;
+export interface UserNoteVariables {
+  id: string;
 }

@@ -1,5 +1,6 @@
 import {
   AppBar,
+  Button,
   ButtonGroup,
   CircularProgress,
   createStyles,
@@ -87,7 +88,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const Navbar = (): JSX.Element => {
   const classes = useStyles();
   const [searchInput, setSearchInput] = useState("");
-  const { loading, error, getNotes } = useContext(NotesContext);
+  const { loading, getNote } = useContext(NotesContext);
   const debouncedSearchTerm = useDebounce(searchInput, 500);
   const { darkState, setDarkState } = useContext(ThemeContext);
   const { signOut, cookies, setSigninOpen } = useContext(AuthContext);
@@ -101,15 +102,10 @@ const Navbar = (): JSX.Element => {
   }
 
   useEffect(() => {
-    if (debouncedSearchTerm.length > 0) {
-      getNotes({
-        variables: { message: debouncedSearchTerm },
-      });
-    }
-    // if (searchInput.length < 1) {
-    //   getNotes();
-    // }
-  }, [debouncedSearchTerm, getNotes, searchInput]);
+    getNote({
+      variables: { message: debouncedSearchTerm },
+    });
+  }, [searchInput, debouncedSearchTerm, getNote]);
 
   return (
     <Grid container>
@@ -143,7 +139,9 @@ const Navbar = (): JSX.Element => {
               <AddNoteButton>
                 <Link href="add">Add Note</Link>
               </AddNoteButton>
-              <ShowYourNotesButton>My Notes</ShowYourNotesButton>
+              <ShowYourNotesButton>
+                <Link href="mynotes">My Notes</Link>
+              </ShowYourNotesButton>
               <ShowArhivedNotesButton>
                 <Link href="notes">Notes</Link>
               </ShowArhivedNotesButton>
@@ -180,9 +178,10 @@ const Navbar = (): JSX.Element => {
                 />
               </form>
             </div>
-
+            <Button style={{ marginLeft: 8 }} variant="contained" color="secondary">
+              Refresh
+            </Button>
             {loading && <CircularProgress color="inherit" size={20} />}
-            {error && <h6>Error loading results</h6>}
           </Toolbar>
         </Grid>
       </AppBar>
