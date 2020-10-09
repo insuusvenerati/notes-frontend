@@ -18,5 +18,5 @@
     "isolatedModules": true
   },
   "exclude": ["node_modules", "__generated__"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_app.jsx"]
 }

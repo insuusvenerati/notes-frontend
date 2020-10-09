@@ -1,3 +1,5 @@
 node_modules/
 build/
 .next/
+public/
+next.config.js

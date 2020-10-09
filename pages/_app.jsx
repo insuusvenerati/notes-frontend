@@ -1,4 +1,6 @@
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { RewriteFrames } from "@sentry/integrations";
+import * as Sentry from "@sentry/browser";
 import "assets/tailwind.css";
 import { Layout } from "components/Layout";
 import { SignInModal } from "components/SigninModal";
@@ -7,10 +9,28 @@ import { AuthContextProvider } from "context/auth";
 import { NotesContextProvider } from "context/notes";
 import { ThemeContextProvider } from "context/theme";
 import { AppProps } from "next/app";
+import getConfig from "next/config";
 import Head from "next/head";
 import { CookiesProvider } from "react-cookie";
 
-export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
+  const config = getConfig();
+  const distDir = `${config.serverRuntimeConfig.rootDir}/.next`;
+  Sentry.init({
+    enabled: process.env.NODE_ENV === "production",
+    integrations: [
+      new RewriteFrames({
+        iteratee: (frame) => {
+          frame.filename = frame?.filename?.replace(distDir, "app:///_next");
+          return frame;
+        },
+      }),
+    ],
+    dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+  });
+}
+
+export default function MyApp({ Component, pageProps, err }) {
   return (
     <>
       <Head>
@@ -38,7 +58,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
                 <CssBaseline />
                 <Layout>
                   <SignInModal />
-                  <Component {...pageProps} />
+                  <Component {...pageProps} err={err} />
                 </Layout>
               </NotesContextProvider>
             </ThemeContextProvider>
