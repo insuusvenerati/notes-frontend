@@ -1,5 +1,6 @@
 import {
   Button,
+  CircularProgress,
   Dialog,
   DialogActions,
   DialogContent,
@@ -23,8 +24,8 @@ export const SignInModal = (): JSX.Element => {
   return (
     <>
       <Dialog
-        open={signinOpen}
-        onClose={() => setSigninOpen(false)}
+        open={!!signinOpen.open}
+        onClose={() => setSigninOpen({ open: false, loading: false })}
         aria-labelledby="form-dialog-title"
       >
         <DialogTitle id="form-dialog-title">Sign In</DialogTitle>
@@ -41,22 +42,32 @@ export const SignInModal = (): JSX.Element => {
           />
           <TextField
             onChange={(e) => setSigninDetails({ ...signinDetails, password: e.target.value })}
-            autoFocus
             margin="dense"
             label="Password"
             type="password"
             fullWidth
             error={signinError.error}
           />
-          {/* {signinError.message &&
-            signinError.message.map((error, i) => (
-              <p key={i}> {error?.extensions?.exception.data.message[0].messages[0].message} </p>
-            ))} */}
+
           {signinError && signinError.message}
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setSigninOpen(false)}>Cancel</Button>
-          <Button onClick={signIn}>Submit</Button>
+          <Button onClick={() => setSigninOpen({ open: false, loading: false })}>Cancel</Button>
+          <Button
+            variant="contained"
+            color="secondary"
+            disabled={signinOpen.loading}
+            onClick={signIn}
+          >
+            Submit
+          </Button>
+          {signinOpen.loading && (
+            <CircularProgress
+              style={{ position: "absolute", right: "8%" }}
+              color="inherit"
+              size={24}
+            />
+          )}
         </DialogActions>
       </Dialog>
     </>

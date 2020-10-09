@@ -20,7 +20,7 @@ type NotesProps = {
 const SelectComponent = (): JSX.Element => (
   <FormControl style={{ minWidth: 120, marginLeft: 5, marginBottom: 5 }}>
     <InputLabel>Name</InputLabel>
-    <Select>
+    <Select autoComplete="false">
       <MenuItem value={10}>Ten</MenuItem>
       <MenuItem value={20}>Twenty</MenuItem>
       <MenuItem value={30}>Thirty</MenuItem>

@@ -8,8 +8,11 @@ import { useCookies } from "react-cookie";
 type AuthContextType = {
   signOut: () => void;
   signIn: () => void;
-  signinOpen: boolean;
-  setSigninOpen: Dispatch<SetStateAction<boolean>>;
+  signinOpen: {
+    loading?: boolean;
+    open?: boolean;
+  };
+  setSigninOpen: Dispatch<SetStateAction<{ loading: boolean; open: boolean }>>;
   signinError: {
     statusCode: number;
     message: string;
@@ -34,11 +37,16 @@ export const AuthContext = createContext({} as AuthContextType);
 
 export const AuthContextProvider: React.FC = ({ children }) => {
   const [cookies, setCookie, removeCookie] = useCookies();
-  const [signinOpen, setSigninOpen] = useState(false);
+  const [signinOpen, setSigninOpen] = useState({
+    loading: false,
+    open: false,
+  });
   const [signinDetails, setSigninDetails] = useState({
     email: "",
     password: "",
   });
+
+  //TODO Handle status code?
   const [signinError, setSigninError] = useState({
     statusCode: 200,
     message: "",
@@ -56,6 +64,7 @@ export const AuthContextProvider: React.FC = ({ children }) => {
   }
 
   function signIn() {
+    setSigninOpen({ loading: true, open: true });
     signinDetails.email &&
       signinDetails.password &&
       login({
@@ -64,7 +73,7 @@ export const AuthContextProvider: React.FC = ({ children }) => {
         setCookie("token", res.data?.login.jwt);
         setCookie("id", res.data?.login.user.id);
         setCookie("user", res.data?.login.user.username);
-        setSigninOpen(false);
+        setSigninOpen({ loading: false, open: false });
       });
 
     if (loginError) {

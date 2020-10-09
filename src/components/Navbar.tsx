@@ -123,13 +123,17 @@ const Navbar = (): JSX.Element => {
               >
                 {darkState === "dark" ? <BrightnessHighIcon /> : <Brightness4Icon />}
               </Fab>
-              <LoginButton setSigninOpen={setSigninOpen} signOut={signOut} token={token} />
+              <LoginButton
+                setSigninOpen={() => setSigninOpen({ open: true, loading: false })}
+                signOut={signOut}
+                token={token}
+              />
             </ListItem>
           </Toolbar>
         </Grid>
         <Grid item xs={12}>
           <Toolbar classes={{ root: classes.secondaryToolbar }}>
-            <Typography variant="h4">Hello {user}, welcome to Notes!</Typography>
+            <Typography variant="h4">Hello {user ? user : "User"}, welcome to Notes!</Typography>
           </Toolbar>
         </Grid>
 
