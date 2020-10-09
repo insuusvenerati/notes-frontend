@@ -1,6 +1,6 @@
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { RewriteFrames } from "@sentry/integrations";
 import * as Sentry from "@sentry/browser";
+import { RewriteFrames } from "@sentry/integrations";
 import "assets/tailwind.css";
 import { Layout } from "components/Layout";
 import { SignInModal } from "components/SigninModal";
@@ -8,7 +8,6 @@ import { ApolloContextProvider } from "context/apollo";
 import { AuthContextProvider } from "context/auth";
 import { NotesContextProvider } from "context/notes";
 import { ThemeContextProvider } from "context/theme";
-import { AppProps } from "next/app";
 import getConfig from "next/config";
 import Head from "next/head";
 import { CookiesProvider } from "react-cookie";
