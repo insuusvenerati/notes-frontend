@@ -47,19 +47,13 @@ export default function MyApp({ Component, pageProps, err }) {
         <meta property="og:url" content="https://notes.stiforr.tech/" />
         <meta property="og:title" content="Notes" />
         <meta property="og:description" content="A place to leave notes for other people!" />
-        <meta
-          property="og:image"
-          content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
-        />
+        <meta property="og:image" content="https://i.imgur.com/IjrsBBV.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://notes.stiforr.tech/" />
         <meta property="twitter:title" content="Notes" />
         <meta property="twitter:description" content="A place to leave notes for other people!" />
-        <meta
-          property="twitter:image"
-          content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
-        />
+        <meta property="twitter:image" content="https://i.imgur.com/IjrsBBV.png" />
 
         <link rel="manifest" href="manifest.json" />
 
