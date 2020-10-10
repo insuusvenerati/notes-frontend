@@ -84,5 +84,7 @@ const swConfig = {
 };
 
 // if (process.env.NODE_ENV === "production") {
-module.exports = compose([withOffline, withSourceMaps], [sourceMapConfig, swConfig]);
+// module.exports = compose([withOffline, withSourceMaps], [sourceMapConfig, swConfig]);
 // }
+
+module.exports = withOffline(swConfig);
