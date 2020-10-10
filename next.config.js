@@ -1,6 +1,5 @@
-const withSourceMaps = require("@zeit/next-source-maps")();
+const withSourceMaps = require("@zeit/next-source-maps");
 const SentryWebpackPlugin = require("@sentry/webpack-plugin");
-const compose = require("next-compose");
 const withOffline = require("next-offline");
 
 const {
@@ -83,8 +82,6 @@ const swConfig = {
   },
 };
 
-// if (process.env.NODE_ENV === "production") {
-// module.exports = compose([withOffline, withSourceMaps], [sourceMapConfig, swConfig]);
-// }
-
-module.exports = withOffline(swConfig);
+if (process.env.NODE_ENV === "production") {
+  module.exports = withOffline(withSourceMaps({ ...swConfig, ...sourceMapConfig }));
+}
