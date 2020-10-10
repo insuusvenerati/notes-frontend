@@ -8,13 +8,13 @@ import {
   useMutation,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import Cookies from "js-cookie";
+import { AddNote } from "queries/__generated__/AddNote";
 import { createContext, Dispatch, FormEvent, SetStateAction, useState } from "react";
-import { ADD_NOTE, GET_NOTE, GET_NOTES } from "../queries/notes";
+import { useCookies } from "react-cookie";
+import { ADD_NOTE, GET_NOTE } from "../queries/notes";
 import { Note } from "../queries/__generated__/Note";
 import { Notes } from "../queries/__generated__/Notes";
-import Cookies from "js-cookie";
-import { useCookies } from "react-cookie";
-import { AddNote } from "queries/__generated__/AddNote";
 
 const httpLink = createHttpLink({
   uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`,
