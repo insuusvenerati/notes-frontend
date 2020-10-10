@@ -43,11 +43,60 @@ export default function MyApp({ Component, pageProps, err }) {
         <meta name="keywords" content="Keywords" />
         <title>Notes</title>
 
-        <link rel="manifest" href="/manifest.json" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://notes.stiforr.tech/" />
+        <meta property="og:title" content="Notes" />
+        <meta property="og:description" content="A place to leave notes for other people!" />
+        <meta
+          property="og:image"
+          content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://notes.stiforr.tech/" />
+        <meta property="twitter:title" content="Notes" />
+        <meta property="twitter:description" content="A place to leave notes for other people!" />
+        <meta
+          property="twitter:image"
+          content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
+        />
+
+        <link rel="manifest" href="manifest.json" />
+
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="application-name" content="Notes" />
+        <meta name="apple-mobile-web-app-title" content="Notes" />
+        <meta name="theme-color" content="#9C27B0" />
+        <meta name="msapplication-navbutton-color" content="#9C27B0" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="msapplication-starturl" content="/" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link href="icons/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16" />
         <link href="icons/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" />
-        <link rel="apple-touch-icon" href="icons/apple-icon.png"></link>
-        <meta name="theme-color" content="#317EFB" />
+        <link href="icons/favicon-96x96.png" rel="icon" type="image/png" sizes="96x96" />
+
+        <link rel="icon" type="image/png" sizes="192.192" href="/icons/android-icon-192x192.png" />
+        <link
+          rel="apple-touch-icon"
+          type="image/png"
+          sizes="192.192"
+          href="/icons/android-icon-192x192.png"
+        />
+        <link rel="icon" type="image/png" sizes="180x180" href="/icons/apple-icon-180x180.png" />
+        <link
+          rel="apple-touch-icon"
+          type="image/png"
+          sizes="180x180"
+          href="/icons/apple-icon-180x180.png"
+        />
+        <link rel="icon" type="image/png" sizes="72x72" href="/icons/apple-icon-72x72.png" />
+        <link
+          rel="apple-touch-icon"
+          type="image/png"
+          sizes="72x72"
+          href="/icons/apple-icon-72x72.png"
+        />
       </Head>
       <CookiesProvider>
         <ApolloContextProvider>
