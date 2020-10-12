@@ -27,6 +27,7 @@ export const GET_NOTES = gql`
       message
       user {
         username
+        id
       }
     }
   }
@@ -48,6 +49,8 @@ export const GET_NOTE = gql`
     }
   }
 `;
+
+// Get all notes from User
 
 export const GET_USER_NOTE = gql`
   query UserNote($id: ID!) {
@@ -79,6 +82,8 @@ export const GET_USERS = gql`
     }
   }
 `;
+
+// Login
 
 export const LOGIN = gql`
   mutation Login($identifier: String!, $password: String!) {

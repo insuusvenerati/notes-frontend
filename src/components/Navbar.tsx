@@ -87,8 +87,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Navbar = (): JSX.Element => {
   const classes = useStyles();
-  const [searchInput, setSearchInput] = useState("");
-  const { loading, getNote } = useContext(NotesContext);
+
+  const { loading, searchInput, setSearchInput } = useContext(NotesContext);
   const debouncedSearchTerm = useDebounce(searchInput, 500);
   const { darkState, setDarkState } = useContext(ThemeContext);
   const { signOut, cookies, setSigninOpen } = useContext(AuthContext);
@@ -101,11 +101,11 @@ const Navbar = (): JSX.Element => {
     setSearchInput(event.target.value);
   }
 
-  useEffect(() => {
-    getNote({
-      variables: { message: debouncedSearchTerm },
-    });
-  }, [searchInput, debouncedSearchTerm, getNote]);
+  // useEffect(() => {
+  //   getNote({
+  //     variables: { message: debouncedSearchTerm },
+  //   });
+  // }, [searchInput, debouncedSearchTerm, getNote]);
 
   return (
     <Grid container>

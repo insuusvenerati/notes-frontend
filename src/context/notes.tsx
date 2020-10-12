@@ -4,7 +4,6 @@ import {
   createHttpLink,
   InMemoryCache,
   QueryLazyOptions,
-  useLazyQuery,
   useMutation,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
@@ -12,9 +11,8 @@ import Cookies from "js-cookie";
 import { AddNote } from "queries/__generated__/AddNote";
 import { createContext, Dispatch, FormEvent, SetStateAction, useState } from "react";
 import { useCookies } from "react-cookie";
-import { ADD_NOTE, GET_NOTE } from "../queries/notes";
-import { Note } from "../queries/__generated__/Note";
-import { Notes } from "../queries/__generated__/Notes";
+import { ADD_NOTE } from "../queries/notes";
+import { Notes, Notes_notes } from "../queries/__generated__/Notes";
 
 const httpLink = createHttpLink({
   uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`,
@@ -40,6 +38,10 @@ type NoteForm = {
   message: string;
 };
 
+export type NoteFromSearch = {
+  item: Notes_notes | undefined;
+};
+
 type NotesContextType = {
   data: Notes | undefined;
   loading: boolean;
@@ -50,12 +52,20 @@ type NotesContextType = {
   handleSubmit: (event: FormEvent) => void;
   addNoteError?: ApolloError;
   addNoteLoading: boolean;
+  selectedUser: string;
+  setSelectedUser: Dispatch<SetStateAction<string>>;
+  searchInput: string;
+  setSearchInput: Dispatch<SetStateAction<string>>;
+  searchResults: NoteFromSearch;
+  setSearchResults: Dispatch<SetStateAction<NoteFromSearch>>;
 };
 
 export const NotesContext = createContext<NotesContextType>({} as NotesContextType);
 
 export const NotesContextProvider: React.FC = ({ children }) => {
-  const [getNote, { data, loading, error }] = useLazyQuery<Note>(GET_NOTE, { client: authClient });
+  const [searchInput, setSearchInput] = useState("");
+  const [searchResults, setSearchResults] = useState<NoteFromSearch>([]);
+  const [selectedUser, setSelectedUser] = useState("");
   const [addNoteForm, setNoteForm] = useState({
     title: "",
     message: "",
@@ -80,15 +90,17 @@ export const NotesContextProvider: React.FC = ({ children }) => {
   return (
     <NotesContext.Provider
       value={{
-        getNote,
-        data,
-        loading,
-        error,
         setNoteForm,
         addNoteForm,
         handleSubmit,
         addNoteError,
         addNoteLoading,
+        selectedUser,
+        setSelectedUser,
+        searchInput,
+        setSearchInput,
+        searchResults,
+        setSearchResults,
       }}
     >
       {children}

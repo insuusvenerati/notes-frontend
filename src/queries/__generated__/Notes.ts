@@ -10,6 +10,7 @@
 export interface Notes_notes_user {
   __typename: "UsersPermissionsUser";
   username: string;
+  id: string;
 }
 
 export interface Notes_notes {
