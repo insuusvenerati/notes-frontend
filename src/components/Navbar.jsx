@@ -30,7 +30,7 @@ import { useDebounce } from "../hooks/useDebounce";
 import { LoginButton } from "./LoginButton";
 import { AddNoteButton, ShowArhivedNotesButton, ShowYourNotesButton } from "./ToolbarButtons";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     menuButton: {
       marginRight: theme.spacing(2),
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Navbar = (): JSX.Element => {
+const Navbar = () => {
   const classes = useStyles();
 
   const { loading, searchInput, setSearchInput } = useContext(NotesContext);
@@ -94,10 +94,10 @@ const Navbar = (): JSX.Element => {
   const { signOut, cookies, setSigninOpen } = useContext(AuthContext);
   const router = useRouter();
 
-  const token: string = cookies.token;
-  const user: string = cookies.user;
+  const token = cookies.token;
+  const user = cookies.user;
 
-  function handleSearch(event: React.ChangeEvent<HTMLInputElement>): void {
+  function handleSearch(event) {
     setSearchInput(event.target.value);
   }
 
@@ -158,7 +158,7 @@ const Navbar = (): JSX.Element => {
                 <SearchIcon />
               </div>
               <form
-                onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
+                onSubmit={(event) => {
                   event.preventDefault();
                   router.push("/search").catch((err) => console.error(err));
                 }}

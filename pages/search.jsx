@@ -3,7 +3,7 @@ import { Error } from "components/Error";
 import { Notes } from "components/Notes";
 import { NotesContext } from "context/notes";
 
-const Search = (): JSX.Element => {
+const Search = () => {
   const { data, error } = useContext(NotesContext);
 
   return (

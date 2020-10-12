@@ -1,15 +1,12 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core";
 import { NotesContext } from "context/notes";
-import { Notes_notes_user } from "queries/__generated__/Notes";
-import { ChangeEvent, useContext } from "react";
+import { useContext } from "react";
 
-type SelectComponentProps = Array<Notes_notes_user> | Notes_notes_user;
-
-export const SelectComponent = ({ users }: { users?: SelectComponentProps }): JSX.Element => {
+export const SelectComponent = ({ users }) => {
   const { selectedUser, setSelectedUser } = useContext(NotesContext);
 
-  const handleUsernameChange = (event: ChangeEvent<{ value: unknown }>) => {
-    setSelectedUser(event.target.value as string);
+  const handleUsernameChange = (event) => {
+    setSelectedUser(event.target.value);
   };
 
   return (

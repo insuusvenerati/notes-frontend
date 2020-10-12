@@ -6,7 +6,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -18,5 +18,13 @@
     "isolatedModules": true
   },
   "exclude": ["node_modules", "__generated__"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_app.jsx"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/_app.jsx",
+    "pages/notes.jsx",
+    "src/components/Notes.jsx",
+    "src/context/notes.jsx", "pages/add.jsx", "pages/search.jsx", "src/components/Navbar.jsx", "src/components/UserSelect.jsx"
+  ]
 }

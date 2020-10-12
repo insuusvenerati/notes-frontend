@@ -4,29 +4,28 @@ import { Alert } from "@material-ui/lab";
 import { DynamicError, DynamicNotes } from "components/DynamicComponents";
 import { SelectComponent } from "components/UserSelect";
 import { authClient } from "context/apollo";
-import { NoteFromSearch, NotesContext } from "context/notes";
+import { NotesContext } from "context/notes";
 import Fuse from "fuse.js";
 import { GET_NOTES } from "queries/notes";
-import { Notes as NotesQuery } from "queries/__generated__/Notes";
 import { useContext, useEffect } from "react";
 import { useCookies } from "react-cookie";
 
-const NotesPage = (): JSX.Element => {
+const NotesPage = () => {
   const [cookies] = useCookies(["id"]);
-  const { data, error } = useQuery<NotesQuery>(GET_NOTES, { client: authClient });
+  const { data, error } = useQuery(GET_NOTES, { client: authClient });
   const { searchInput, searchResults, setSearchResults } = useContext(NotesContext);
 
-  const fuse = new Fuse<any>(data?.notes as any, {
+  const fuse = new Fuse(data?.notes, {
     keys: ["user.username", "message", "title"],
   });
 
   useEffect(() => {
     if (searchInput) {
-      setSearchResults(fuse.search(searchInput) as any);
+      setSearchResults(fuse.search(searchInput));
       console.log(searchResults);
     }
     if (!searchInput) {
-      setSearchResults([] as any);
+      setSearchResults([]);
     }
   }, [data, searchInput]);
 

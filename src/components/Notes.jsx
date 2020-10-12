@@ -1,13 +1,8 @@
-import { NoteFromSearch, NotesContext } from "context/notes";
+import { NotesContext } from "context/notes";
 import { useContext } from "react";
-import { Notes as NotesQuery } from "../queries/__generated__/Notes";
 import Note from "./Note";
 
-type NotesProps = {
-  data: NotesQuery;
-};
-
-export const Notes = ({ data }: NotesProps): JSX.Element => {
+export const Notes = ({ data }) => {
   const { searchResults } = useContext(NotesContext);
 
   if (searchResults.length > 0) {

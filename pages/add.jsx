@@ -11,7 +11,7 @@ import { NotesContext } from "context/notes";
 import { useContext } from "react";
 import { useCookies } from "react-cookie";
 
-const AddNote = (): JSX.Element => {
+const AddNote = () => {
   const [cookies] = useCookies(["id"]);
   const { addNoteForm, setNoteForm, handleSubmit, addNoteError, addNoteLoading } = useContext(
     NotesContext
