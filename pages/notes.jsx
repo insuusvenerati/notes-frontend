@@ -3,13 +3,13 @@ import { useQuery } from "@apollo/client";
 import { CircularProgress } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import { DynamicNotes } from "components/DynamicComponents";
-import { authClient } from "context/apollo";
 import { NotesContext } from "context/notes";
 import Fuse from "fuse.js";
 import { useDebounce } from "hooks/useDebounce";
 import { GET_NOTES } from "queries/notes";
 import { useContext } from "react";
 import { useCookies } from "react-cookie";
+import { authClient } from "../src/apollo";
 
 const NotesPage = () => {
   const [cookies] = useCookies(["token"]);
