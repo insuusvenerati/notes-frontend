@@ -60,6 +60,7 @@
     "apollo": "2.31.0",
     "cross-env": "7.0.2",
     "eslint": "7.11.0",
-    "eslint-plugin-react": "^7.21.4"
+    "eslint-plugin-react": "^7.21.4",
+    "prop-types": "^15.7.2"
   }
 }

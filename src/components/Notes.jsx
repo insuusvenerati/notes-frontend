@@ -1,3 +1,5 @@
+import { Accordion } from "@material-ui/core";
+import { AccordionNote } from "./AccordionNote";
 import Note from "./Note";
 
 export const Notes = ({ data }) => {
@@ -5,7 +7,7 @@ export const Notes = ({ data }) => {
     <>
       {data &&
         data.map((note) => {
-          return <Note note={note} key={note?.id} />;
+          return <AccordionNote note={note} key={note?.id} />;
         })}
     </>
   );
