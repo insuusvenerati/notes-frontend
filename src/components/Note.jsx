@@ -1,12 +1,7 @@
 import { Card, CardContent, CardHeader } from "@material-ui/core";
 import React from "react";
-import { Notes_notes } from "../queries/__generated__/Notes";
 
-type NoteProps = {
-  note: Notes_notes | null;
-};
-
-const Note = ({ note }: NoteProps): JSX.Element => {
+const Note = ({ note }) => {
   const date = new Date(note?.createdAt).toLocaleDateString();
   return (
     <Card>

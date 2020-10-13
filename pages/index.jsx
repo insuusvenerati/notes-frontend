@@ -1,4 +1,4 @@
-const Index = (): JSX.Element => {
+const Index = () => {
   return (
     <>
       <h1>Home Page</h1>

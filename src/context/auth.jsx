@@ -1,41 +1,12 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { LOGIN } from "queries/notes";
-import { Login, LoginVariables } from "queries/__generated__/Login";
-import { createContext, Dispatch, SetStateAction, useState } from "react";
+import { createContext, useState } from "react";
 import { useCookies } from "react-cookie";
 
-type AuthContextType = {
-  signOut: () => void;
-  signIn: () => void;
-  signinOpen: {
-    loading?: boolean;
-    open?: boolean;
-  };
-  setSigninOpen: Dispatch<SetStateAction<{ loading: boolean; open: boolean }>>;
-  signinError: {
-    statusCode: number;
-    message: string;
-    error: boolean;
-  };
-  signinDetails: {
-    email: string;
-    password: string;
-  };
-  setSigninDetails: Dispatch<
-    SetStateAction<{
-      email: string;
-      password: string;
-    }>
-  >;
-  cookies: any;
-  setCookie: (name: string, value: any) => void;
-  removeCookie: (name: string, value: any) => void;
-};
+export const AuthContext = createContext({});
 
-export const AuthContext = createContext({} as AuthContextType);
-
-export const AuthContextProvider: React.FC = ({ children }) => {
+export const AuthContextProvider = ({ children }) => {
   const [cookies, setCookie, removeCookie] = useCookies();
   const [signinOpen, setSigninOpen] = useState({
     loading: false,
@@ -52,7 +23,7 @@ export const AuthContextProvider: React.FC = ({ children }) => {
     message: "",
     error: false,
   });
-  const [login, { error: loginError }] = useMutation<Login, LoginVariables>(LOGIN);
+  const [login, { error: loginError }] = useMutation(LOGIN);
 
   const router = useRouter();
 

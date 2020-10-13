@@ -1,11 +1,7 @@
 import { Alert } from "@material-ui/lab";
 import React from "react";
 
-type ErrorProps = {
-  error: Error;
-};
-
-export const Error = ({ error }: ErrorProps): JSX.Element => {
+export const Error = ({ error }) => {
   return (
     <Alert severity="error">
       Error loading notes from the server{" "}

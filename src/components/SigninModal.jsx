@@ -11,7 +11,7 @@ import {
 import { AuthContext } from "context/auth";
 import { useContext } from "react";
 
-export const SignInModal = (): JSX.Element => {
+export const SignInModal = () => {
   const {
     signinDetails,
     signinOpen,

@@ -14,7 +14,6 @@
     "@sentry/node": "5.25.0",
     "@sentry/webpack-plugin": "1.13.0",
     "@zeit/next-source-maps": "0.0.3",
-    "axios": "0.20.0",
     "clsx": "1.1.1",
     "dotenv": "8.2.0",
     "fuse.js": "^6.4.1",
@@ -22,10 +21,7 @@
     "graphql-request": "3.1.0",
     "js-cookie": "2.2.1",
     "next": "9.5.5",
-    "next-compose": "0.0.2",
-    "next-cookies": "2.0.3",
     "next-offline": "5.0.2",
-    "next-pwa": "3.1.5",
     "react": "16.13.1",
     "react-cookie": "4.0.3",
     "react-dom": "16.13.1",
@@ -64,6 +60,6 @@
     "apollo": "2.31.0",
     "cross-env": "7.0.2",
     "eslint": "7.11.0",
-    "eslint-plugin-react": "7.21.4"
+    "eslint-plugin-react": "^7.21.4"
   }
 }

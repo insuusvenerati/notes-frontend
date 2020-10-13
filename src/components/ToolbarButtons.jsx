@@ -1,8 +1,8 @@
-import { Button, Theme } from "@material-ui/core";
-import { deepOrange, blue, green } from "@material-ui/core/colors";
+import { Button } from "@material-ui/core";
+import { blue, deepOrange, green } from "@material-ui/core/colors";
 import { withStyles } from "@material-ui/styles";
 
-export const AddNoteButton = withStyles((theme: Theme) => ({
+export const AddNoteButton = withStyles((theme) => ({
   root: {
     backgroundColor: deepOrange[500],
     "&:hover": {
@@ -12,7 +12,7 @@ export const AddNoteButton = withStyles((theme: Theme) => ({
   },
 }))(Button);
 
-export const ShowYourNotesButton = withStyles((theme: Theme) => ({
+export const ShowYourNotesButton = withStyles((theme) => ({
   root: {
     backgroundColor: blue[500],
     "&:hover": {
@@ -22,7 +22,7 @@ export const ShowYourNotesButton = withStyles((theme: Theme) => ({
   },
 }))(Button);
 
-export const ShowArhivedNotesButton = withStyles((theme: Theme) => ({
+export const ShowArhivedNotesButton = withStyles((theme) => ({
   root: {
     backgroundColor: green[500],
     "&:hover": {

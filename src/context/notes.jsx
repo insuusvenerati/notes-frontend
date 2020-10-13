@@ -1,40 +1,19 @@
-import { ApolloClient, createHttpLink, InMemoryCache, useMutation } from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
-import Cookies from "js-cookie";
+import { useMutation } from "@apollo/client";
 import { createContext, useState } from "react";
 import { useCookies } from "react-cookie";
+import { authClient } from "../apollo";
 import { ADD_NOTE } from "../queries/notes";
-
-const httpLink = createHttpLink({
-  uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`,
-});
-
-const authLink = setContext((_, { headers }) => {
-  const token = Cookies.get("token");
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : "",
-    },
-  };
-});
-
-const authClient = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-});
 
 export const NotesContext = createContext({});
 
 export const NotesContextProvider = ({ children }) => {
+  const [cookies] = useCookies(["id"]);
   const [searchInput, setSearchInput] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
   const [selectedUser, setSelectedUser] = useState("");
   const [addNoteForm, setNoteForm] = useState({
     title: "",
     message: "",
   });
-  const [cookies] = useCookies();
   const [addNote, { error: addNoteError, loading: addNoteLoading }] = useMutation(ADD_NOTE, {
     client: authClient,
   });
@@ -62,8 +41,6 @@ export const NotesContextProvider = ({ children }) => {
         setSelectedUser,
         searchInput,
         setSearchInput,
-        searchResults,
-        setSearchResults,
       }}
     >
       {children}
