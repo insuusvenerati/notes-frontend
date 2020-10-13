@@ -1,7 +1,7 @@
 import CssBaseline from "@material-ui/core/CssBaseline";
 import * as Sentry from "@sentry/browser";
 import { RewriteFrames } from "@sentry/integrations";
-import "assets/tailwind.css";
+import "../src/assets/tailwind.css";
 import { Layout } from "components/Layout";
 import { SignInModal } from "components/SigninModal";
 import { ApolloContextProvider } from "context/apollo";

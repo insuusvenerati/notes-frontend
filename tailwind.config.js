@@ -3,7 +3,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: ["./src/**/*.tsx", "./public/index.html"],
+  purge: ["./src/**/*.jsx", "./public/index.html"],
   target: "relaxed",
   prefix: "",
   important: false,

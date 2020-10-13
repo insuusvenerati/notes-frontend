@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function useLocalStorage<T>(key: string, initialValue: T) {
+function useLocalStorage(key, initialValue) {
   // State to store our value
   // Pass initial state function to useState so logic is only executed once
-  const [storedValue, setStoredValue] = useState<T>(() => {
+  const [storedValue, setStoredValue] = useState(() => {
     try {
       // Get from local storage by key
       const item = window.localStorage.getItem(key);
@@ -18,7 +18,7 @@ function useLocalStorage<T>(key: string, initialValue: T) {
 
   // Return a wrapped version of useState's setter function that ...
   // ... persists the new value to localStorage.
-  const setValue = (value: T | ((val: T) => T)) => {
+  const setValue = (value) => {
     try {
       // Allow value to be a function so we have same API as useState
       const valueToStore = value instanceof Function ? value(storedValue) : value;
@@ -35,6 +35,6 @@ function useLocalStorage<T>(key: string, initialValue: T) {
   return [storedValue, setValue];
 }
 
-export function useSsrLocalStorage<T>(key: string, initialValue?: T): any {
+export function useSsrLocalStorage(key, initialValue) {
   return typeof window !== "undefined" ? useLocalStorage(key, initialValue) : [initialValue];
 }

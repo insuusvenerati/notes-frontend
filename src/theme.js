@@ -1,10 +1,6 @@
-import { createMuiTheme, Theme } from "@material-ui/core";
+import { createMuiTheme } from "@material-ui/core";
 
-function myTheme(
-  mainPrimaryColor: string,
-  mainSecondaryColor: string,
-  palletType: "dark" | "light" | undefined
-): Theme {
+function myTheme(mainPrimaryColor, mainSecondaryColor, palletType) {
   const theme = createMuiTheme({
     palette: {
       type: palletType,
