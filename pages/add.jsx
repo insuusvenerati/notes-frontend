@@ -44,6 +44,7 @@ const AddNote = () => {
               label="Message"
               required
             />
+
             {addNoteError && <Typography>{addNoteError.message}</Typography>}
           </FormGroup>
 

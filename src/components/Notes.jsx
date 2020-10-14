@@ -1,6 +1,4 @@
-import { Accordion } from "@material-ui/core";
 import { AccordionNote } from "./AccordionNote";
-import Note from "./Note";
 
 export const Notes = ({ data }) => {
   return (

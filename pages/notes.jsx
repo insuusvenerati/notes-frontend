@@ -1,8 +1,7 @@
 /* eslint-disable react/display-name */
 import { useQuery } from "@apollo/client";
-import { Accordion, CircularProgress } from "@material-ui/core";
+import { CircularProgress } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
-import { AccordionNote } from "components/AccordionNote";
 import { DynamicError, DynamicNotes } from "components/DynamicComponents";
 import { NotesContext } from "context/notes";
 import Fuse from "fuse.js";
@@ -32,7 +31,6 @@ const NotesPage = () => {
   const results = !loading && fuse.search(debouncedSearchInput);
   const searchResults = debouncedSearchInput ? results.map((result) => result.item) : data.notes;
 
-  // return <DynamicNotes data={searchResults} />;
   return <DynamicNotes data={searchResults} />;
 };
 
