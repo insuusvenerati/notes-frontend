@@ -6,7 +6,7 @@ export const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <Box p={3}>{children}</Box>
+      <Box p={1}>{children}</Box>
     </>
   );
 };

@@ -17,6 +17,7 @@ import {
 } from "@material-ui/core";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
+import ChatIcon from "@material-ui/icons/Chat";
 import ClearIcon from "@material-ui/icons/Clear";
 import SearchIcon from "@material-ui/icons/Search";
 import { AuthContext } from "context/auth";
@@ -130,7 +131,7 @@ const Navbar = () => {
 
         <Grid item md={3} xs={11}>
           <Toolbar>
-            <ButtonGroup variant="contained">
+            <ButtonGroup style={{ maxHeight: 40 }} variant="contained">
               <AddNoteButton>
                 <Link href="add">Add Note</Link>
               </AddNoteButton>
@@ -140,6 +141,14 @@ const Navbar = () => {
               <ShowArhivedNotesButton>
                 <Link href="notes">Notes</Link>
               </ShowArhivedNotesButton>
+              <Button
+                color="primary"
+                onClick={() => {
+                  router.push("/chat");
+                }}
+              >
+                <ChatIcon />
+              </Button>
             </ButtonGroup>
           </Toolbar>
 

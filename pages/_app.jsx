@@ -1,7 +1,6 @@
 import CssBaseline from "@material-ui/core/CssBaseline";
 import * as Sentry from "@sentry/browser";
 import { RewriteFrames } from "@sentry/integrations";
-import "../src/assets/tailwind.css";
 import { Layout } from "components/Layout";
 import { SignInModal } from "components/SigninModal";
 import { ApolloContextProvider } from "context/apollo";
@@ -11,6 +10,7 @@ import { ThemeContextProvider } from "context/theme";
 import getConfig from "next/config";
 import Head from "next/head";
 import { CookiesProvider } from "react-cookie";
+import "../src/assets/tailwind.css";
 
 if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
   const config = getConfig();
@@ -92,6 +92,7 @@ export default function MyApp({ Component, pageProps, err }) {
           href="/icons/apple-icon-72x72.png"
         />
       </Head>
+
       <CookiesProvider>
         <ApolloContextProvider>
           <AuthContextProvider>

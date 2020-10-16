@@ -82,6 +82,14 @@ const swConfig = {
   },
 };
 
+const typescriptConfig = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+};
+
 if (process.env.NODE_ENV === "production") {
-  module.exports = withOffline(withSourceMaps({ ...swConfig, ...sourceMapConfig }));
+  module.exports = withOffline(
+    withSourceMaps({ ...swConfig, ...sourceMapConfig, ...typescriptConfig })
+  );
 }

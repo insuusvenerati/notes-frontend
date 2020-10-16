@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import { useQuery } from "@apollo/client";
-import { CircularProgress } from "@material-ui/core";
+import { CircularProgress, Container } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import { DynamicError, DynamicNotes } from "components/DynamicComponents";
 import { NotesContext } from "context/notes";
