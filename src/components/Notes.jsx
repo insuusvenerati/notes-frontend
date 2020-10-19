@@ -1,11 +1,11 @@
-import Note from "./Note";
+import { AccordionNote } from "./AccordionNote";
 
 export const Notes = ({ data }) => {
   return (
     <>
       {data &&
         data.map((note) => {
-          return <Note note={note} key={note?.id} />;
+          return <AccordionNote note={note} key={note?.id} />;
         })}
     </>
   );

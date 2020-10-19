@@ -12,21 +12,20 @@ import {
   InputBase,
   ListItem,
   makeStyles,
-  Theme,
   Toolbar,
   Typography,
 } from "@material-ui/core";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
+import ChatIcon from "@material-ui/icons/Chat";
 import ClearIcon from "@material-ui/icons/Clear";
 import SearchIcon from "@material-ui/icons/Search";
 import { AuthContext } from "context/auth";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { NotesContext } from "../context/notes";
 import { ThemeContext } from "../context/theme";
-import { useDebounce } from "../hooks/useDebounce";
 import { LoginButton } from "./LoginButton";
 import { AddNoteButton, ShowArhivedNotesButton, ShowYourNotesButton } from "./ToolbarButtons";
 
@@ -89,7 +88,6 @@ const Navbar = () => {
   const classes = useStyles();
 
   const { loading, searchInput, setSearchInput } = useContext(NotesContext);
-  const debouncedSearchTerm = useDebounce(searchInput, 500);
   const { darkState, setDarkState } = useContext(ThemeContext);
   const { signOut, cookies, setSigninOpen } = useContext(AuthContext);
   const router = useRouter();
@@ -100,12 +98,6 @@ const Navbar = () => {
   function handleSearch(event) {
     setSearchInput(event.target.value);
   }
-
-  // useEffect(() => {
-  //   getNote({
-  //     variables: { message: debouncedSearchTerm },
-  //   });
-  // }, [searchInput, debouncedSearchTerm, getNote]);
 
   return (
     <Grid container>
@@ -139,7 +131,7 @@ const Navbar = () => {
 
         <Grid item md={3} xs={11}>
           <Toolbar>
-            <ButtonGroup variant="contained">
+            <ButtonGroup style={{ maxHeight: 40 }} variant="contained">
               <AddNoteButton>
                 <Link href="add">Add Note</Link>
               </AddNoteButton>
@@ -149,6 +141,14 @@ const Navbar = () => {
               <ShowArhivedNotesButton>
                 <Link href="notes">Notes</Link>
               </ShowArhivedNotesButton>
+              <Button
+                color="primary"
+                onClick={() => {
+                  router.push("/chat");
+                }}
+              >
+                <ChatIcon />
+              </Button>
             </ButtonGroup>
           </Toolbar>
 
@@ -182,7 +182,12 @@ const Navbar = () => {
                 />
               </form>
             </div>
-            <Button style={{ marginLeft: 8 }} variant="contained" color="secondary">
+            <Button
+              onClick={() => router.reload()}
+              style={{ marginLeft: 8 }}
+              variant="contained"
+              color="secondary"
+            >
               Refresh
             </Button>
             {loading && <CircularProgress color="inherit" size={20} />}

@@ -1,10 +1,12 @@
 {
+  "$schema": "https://json.schemastore.org/web-manifest.json",
   "name": "Notes",
   "short_name": "Notes",
   "theme_color": "#9C27B0",
   "background_color": "#303030",
   "display": "standalone",
   "orientation": "portrait",
+  "lang": "en-US",
   "scope": "/",
   "start_url": "/",
   "icons": [

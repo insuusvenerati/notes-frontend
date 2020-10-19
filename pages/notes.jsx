@@ -1,8 +1,8 @@
 /* eslint-disable react/display-name */
 import { useQuery } from "@apollo/client";
-import { CircularProgress } from "@material-ui/core";
+import { CircularProgress, Container } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
-import { DynamicNotes } from "components/DynamicComponents";
+import { DynamicError, DynamicNotes } from "components/DynamicComponents";
 import { NotesContext } from "context/notes";
 import Fuse from "fuse.js";
 import { useDebounce } from "hooks/useDebounce";
@@ -26,7 +26,7 @@ const NotesPage = () => {
 
   if (loading && !data) return <CircularProgress />;
   if (!token) return <Alert severity="error">Please log in</Alert>;
-  if (error) return <h1>Error: {JSON.stringify(error, null, 2)}</h1>;
+  if (error) return <DynamicError error={error} />;
 
   const results = !loading && fuse.search(debouncedSearchInput);
   const searchResults = debouncedSearchInput ? results.map((result) => result.item) : data.notes;
