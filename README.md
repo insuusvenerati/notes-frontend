@@ -1,8 +1,6 @@
 <h1 align="center">Notes</h1>
 
-<h3 align="center">
-  <a src="http://notes-frontend.vercel.app/">Demo</a>
-</h3>
+<a src="http://notes-frontend.vercel.app/"><h3 align="center">Demo</h3></a>
 
 <img width="1000px" align="center" src="https://i.imgur.com/lA5ar2z.png" />
 
