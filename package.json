@@ -37,6 +37,7 @@
     "next:dev": "yarn build:tailwind-dev && next dev",
     "next:build": "yarn build:tailwind && next build",
     "next:start": "next start",
+    "lint": "eslint --ext js,jsx .",
     "vercel-build": "yarn build:tailwind && next build",
     "build:tailwind": "cross-env NODE_ENV=production tailwind build ./tailwind.css -o src/assets/tailwind.css",
     "build:tailwind-dev": "tailwind build ./tailwind.css -o src/assets/tailwind.css",
