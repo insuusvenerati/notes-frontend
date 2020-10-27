@@ -1,0 +1,23 @@
+version: 2.1
+steps:
+  - save_cache:
+      key: dependency-cache-{{ checksum "yarn.lock" }}
+      paths:
+        - ./node_modules
+        - ./.next/cache
+jobs:
+  build_install:
+    docker:
+      - image: "circleci/node:14"
+    steps:
+      - checkout
+      - run:
+          name: install
+          command: yarn
+      - run:
+          name: build
+          command: yarn next:build
+workflows:
+  build_install:
+    jobs:
+      - build_install

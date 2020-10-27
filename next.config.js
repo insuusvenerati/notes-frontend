@@ -2,21 +2,11 @@ const withSourceMaps = require("@zeit/next-source-maps");
 const SentryWebpackPlugin = require("@sentry/webpack-plugin");
 const withOffline = require("next-offline");
 
-const {
-  NEXT_PUBLIC_SENTRY_DSN: SENTRY_DSN,
-  SENTRY_ORG,
-  SENTRY_PROJECT,
-  SENTRY_AUTH_TOKEN,
-  NODE_ENV,
-  VERCEL_GITHUB_COMMIT_SHA,
-  VERCEL_GITLAB_COMMIT_SHA,
-  VERCEL_BITBUCKET_COMMIT_SHA,
-} = process.env;
-
 const COMMIT_SHA =
-  VERCEL_GITHUB_COMMIT_SHA || VERCEL_GITLAB_COMMIT_SHA || VERCEL_BITBUCKET_COMMIT_SHA;
+  process.env.VERCEL_GITHUB_COMMIT_SHA ||
+  process.env.VERCEL_GITLAB_COMMIT_SHA ||
+  process.env.VERCEL_BITBUCKET_COMMIT_SHA;
 
-process.env.SENTRY_DSN = SENTRY_DSN;
 const basePath = "";
 
 const sourceMapConfig = {
@@ -32,12 +22,12 @@ const sourceMapConfig = {
       config.resolve.alias["@sentry/node"] = "@sentry/browser";
     }
     if (
-      SENTRY_DSN &&
-      SENTRY_ORG &&
-      SENTRY_PROJECT &&
-      SENTRY_AUTH_TOKEN &&
+      process.env.SENTRY_DSN &&
+      process.env.SENTRY_ORG &&
+      process.env.SENTRY_PROJECT &&
+      process.env.SENTRY_AUTH_TOKEN &&
       COMMIT_SHA &&
-      NODE_ENV === "production"
+      process.env.NODE_ENV === "production"
     ) {
       config.plugins.push(
         new SentryWebpackPlugin({
@@ -89,7 +79,5 @@ const typescriptConfig = {
 };
 
 if (process.env.NODE_ENV === "production") {
-  module.exports = withOffline(
-    withSourceMaps({ ...swConfig, ...sourceMapConfig, ...typescriptConfig })
-  );
+  module.exports = withOffline(withSourceMaps({ ...sourceMapConfig, ...typescriptConfig }));
 }

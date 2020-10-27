@@ -1,6 +1,6 @@
 {
   "name": "@stiforr/frontend",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "private": true,
   "dependencies": {
     "@apollo/client": "3.2.5",
@@ -37,10 +37,12 @@
     "next:dev": "yarn build:tailwind-dev && next dev",
     "next:build": "yarn build:tailwind && next build",
     "next:start": "next start",
+    "lint": "eslint --ext js,jsx .",
     "vercel-build": "yarn build:tailwind && next build",
     "build:tailwind": "cross-env NODE_ENV=production tailwind build ./tailwind.css -o src/assets/tailwind.css",
     "build:tailwind-dev": "tailwind build ./tailwind.css -o src/assets/tailwind.css",
-    "codegen": "apollo client:codegen --target typescript --watch"
+    "codegen": "apollo client:codegen --target typescript --watch",
+    "semantic-release": "semantic-release"
   },
   "browserslist": {
     "production": [
@@ -65,6 +67,11 @@
     "cross-env": "7.0.2",
     "eslint": "7.11.0",
     "eslint-plugin-react": "^7.21.4",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "semantic-release": "^17.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/insuusvenerati/notes-frontend.git"
   }
 }
