@@ -1,4 +1,10 @@
 version: 2.1
+steps:
+  - save_cache:
+      key: dependency-cache-{{ checksum "yarn.lock" }}
+      paths:
+        - ./node_modules
+        - ./.next/cache
 jobs:
   build_install:
     docker:
@@ -15,10 +21,3 @@ workflows:
   build_install:
     jobs:
       - build_install
-# version: 2.1
-# orbs:
-#   node: circleci/node@3.0.0
-# workflows:
-#   node-tests:
-#     jobs:
-#       - node/test
