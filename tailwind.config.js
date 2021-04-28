@@ -1,10 +1,6 @@
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: ["./src/**/*.jsx", "./public/index.html"],
-  target: "relaxed",
+  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  darkMode: false,
   prefix: "",
   important: false,
   separator: ":",
@@ -158,13 +154,18 @@ module.exports = {
     backgroundImage: {
       none: "none",
       "gradient-to-t": "linear-gradient(to top, var(--gradient-color-stops))",
-      "gradient-to-tr": "linear-gradient(to top right, var(--gradient-color-stops))",
+      "gradient-to-tr":
+        "linear-gradient(to top right, var(--gradient-color-stops))",
       "gradient-to-r": "linear-gradient(to right, var(--gradient-color-stops))",
-      "gradient-to-br": "linear-gradient(to bottom right, var(--gradient-color-stops))",
-      "gradient-to-b": "linear-gradient(to bottom, var(--gradient-color-stops))",
-      "gradient-to-bl": "linear-gradient(to bottom left, var(--gradient-color-stops))",
+      "gradient-to-br":
+        "linear-gradient(to bottom right, var(--gradient-color-stops))",
+      "gradient-to-b":
+        "linear-gradient(to bottom, var(--gradient-color-stops))",
+      "gradient-to-bl":
+        "linear-gradient(to bottom left, var(--gradient-color-stops))",
       "gradient-to-l": "linear-gradient(to left, var(--gradient-color-stops))",
-      "gradient-to-tl": "linear-gradient(to top left, var(--gradient-color-stops))",
+      "gradient-to-tl":
+        "linear-gradient(to top left, var(--gradient-color-stops))",
     },
     gradientColorStops: (theme) => theme("colors"),
     backgroundOpacity: (theme) => theme("opacity"),
@@ -207,10 +208,14 @@ module.exports = {
     boxShadow: {
       xs: "0 0 0 1px rgba(0, 0, 0, 0.05)",
       sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-      default: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
-      md: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-      lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-      xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      default:
+        "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+      md:
+        "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      lg:
+        "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      xl:
+        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
       "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
       inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
       outline: "0 0 0 3px rgba(66, 153, 225, 0.5)",
@@ -263,7 +268,14 @@ module.exports = {
         '"Noto Color Emoji"',
       ],
       serif: ["Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],
-      mono: ["Menlo", "Monaco", "Consolas", '"Liberation Mono"', '"Courier New"', "monospace"],
+      mono: [
+        "Menlo",
+        "Monaco",
+        "Consolas",
+        '"Liberation Mono"',
+        '"Courier New"',
+        "monospace",
+      ],
     },
     fontSize: {
       xs: "0.75rem",
