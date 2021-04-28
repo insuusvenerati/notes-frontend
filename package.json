@@ -31,7 +31,7 @@
     "react-firebaseui": "4.1.0",
     "socket.io-client": "2.3.1",
     "tailwindcss": "1.9.5",
-    "typescript": "4.0.3"
+    "typescript": "4.2.4"
   },
   "scripts": {
     "next:dev": "yarn build:tailwind-dev && next dev",
