@@ -1,5 +1,5 @@
 {
-  "extends": [
-    "config:base"
-  ]
+  "baseBranches": ["main"],
+  "extends": ["config:base", "schedule:daily"],
+  "dependencyDashboardApproval": true
 }
