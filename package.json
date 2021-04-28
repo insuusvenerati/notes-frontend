@@ -55,7 +55,7 @@
     "@types/react-dom": "17.0.3",
     "@typescript-eslint/eslint-plugin": "4.22.0",
     "@typescript-eslint/parser": "4.22.0",
-    "apollo": "2.31.0",
+    "apollo": "2.32.10",
     "autoprefixer": "^10.2.5",
     "cross-env": "7.0.2",
     "eslint": "7.25.0",
