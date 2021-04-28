@@ -35,7 +35,7 @@ const swConfig = {
 };
 
 if (process.env.NODE_ENV === "production") {
-  module.exports = withOffline(nextConfig);
+  module.exports = withOffline({ ...nextConfig, ...swConfig });
 } else {
   module.exports = nextConfig;
 }
