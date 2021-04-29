@@ -13,8 +13,6 @@ steps:
         from_secret: NEXT_PUBLIC_API_URL
       NEXT_PUBLIC_APIKEY:
         from_secret: NEXT_PUBLIC_APIKEY
-      GH_TOKEN:
-        from_secret: GH_TOKEN
 
   - name: "Release"
     image: node:lts-buster
@@ -22,6 +20,9 @@ steps:
       - yarn semantic-release
     depends_on:
       - Install and Build
+    environment:
+      GH_TOKEN:
+        from_secret: GH_TOKEN
     when:
       branch:
         include:
