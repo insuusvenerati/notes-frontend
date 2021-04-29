@@ -6,7 +6,9 @@ import { gql } from "@apollo/client";
 
 export const ADD_NOTE = gql`
   mutation AddNote($title: String!, $message: String!, $username: ID) {
-    createNote(input: { data: { title: $title, message: $message, user: $username } }) {
+    createNote(
+      input: { data: { title: $title, message: $message, user: $username } }
+    ) {
       note {
         message
         title
@@ -93,6 +95,18 @@ export const LOGIN = gql`
         email
         username
         id
+      }
+    }
+  }
+`;
+
+export const DELETE_NOTE = gql`
+  mutation DeleteNote($ID: ID!) {
+    deleteNote(input: { where: { id: $ID } }) {
+      note {
+        id
+        message
+        title
       }
     }
   }

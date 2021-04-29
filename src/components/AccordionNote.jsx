@@ -10,6 +10,8 @@ import { red } from "@material-ui/core/colors";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { makeStyles } from "@material-ui/styles";
 import { useRouter } from "next/router";
+import { useContext } from "react";
+import { NotesContext } from "../context/notes";
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -29,11 +31,16 @@ export const AccordionNote = ({ note }) => {
   const router = useRouter();
   const date = new Date(note?.createdAt).toLocaleDateString();
   const classes = useStyles();
+  const { handleDeleteNote } = useContext(NotesContext);
   return (
     <Accordion>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        <Typography className={classes.heading}>{note?.user?.username}</Typography>
-        <Typography className={classes.secondaryHeading}>{note?.title}</Typography>
+        <Typography className={classes.heading}>
+          {note?.user?.username}
+        </Typography>
+        <Typography className={classes.secondaryHeading}>
+          {note?.title}
+        </Typography>
         <Typography className={classes.secondaryHeading}>{date}</Typography>
       </AccordionSummary>
       <AccordionDetails>
@@ -43,7 +50,11 @@ export const AccordionNote = ({ note }) => {
         {router.pathname === "/mynotes" ? (
           <>
             <Button size="small">Edit</Button>
-            <Button size="small" style={{ color: red[500] }}>
+            <Button
+              onClick={() => handleDeleteNote(note?.id)}
+              size="small"
+              style={{ color: red[500] }}
+            >
               Delete
             </Button>
           </>

@@ -8,14 +8,20 @@ import {
 } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import { NotesContext } from "context/notes";
+import { useRouter } from "next/router";
 import { useContext } from "react";
 import { useCookies } from "react-cookie";
 
 const AddNote = () => {
   const [cookies] = useCookies(["id"]);
-  const { addNoteForm, setNoteForm, handleSubmit, addNoteError, addNoteLoading } = useContext(
-    NotesContext
-  );
+  const {
+    addNoteForm,
+    setNoteForm,
+    handleSubmit,
+    addNoteError,
+    addNoteLoading,
+  } = useContext(NotesContext);
+  const router = useRouter();
 
   if (!cookies.id) return <Alert severity="error">Please sign in</Alert>;
 
@@ -25,19 +31,24 @@ const AddNote = () => {
         <form
           onSubmit={(e) => {
             handleSubmit(e);
+            router.push("/notes");
           }}
           autoComplete="off"
         >
           <FormGroup>
             <TextField
-              onChange={(e) => setNoteForm({ ...addNoteForm, title: e.target.value })}
+              onChange={(e) =>
+                setNoteForm({ ...addNoteForm, title: e.target.value })
+              }
               value={addNoteForm.title}
               label="Title"
               style={{ marginBottom: 5 }}
               required
             />
             <TextField
-              onChange={(e) => setNoteForm({ ...addNoteForm, message: e.target.value })}
+              onChange={(e) =>
+                setNoteForm({ ...addNoteForm, message: e.target.value })
+              }
               value={addNoteForm.message}
               rows={4}
               multiline
@@ -57,7 +68,11 @@ const AddNote = () => {
           >
             Submit
             {addNoteLoading && (
-              <CircularProgress style={{ marginLeft: 10 }} size={20} color="inherit" />
+              <CircularProgress
+                style={{ marginLeft: 10 }}
+                size={20}
+                color="inherit"
+              />
             )}
           </Button>
         </form>
