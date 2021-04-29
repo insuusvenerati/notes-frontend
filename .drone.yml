@@ -27,6 +27,7 @@ steps:
       branch:
         include:
           - main
+          - develop
 trigger:
   event:
     exclude:
