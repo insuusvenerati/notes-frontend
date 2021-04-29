@@ -1,0 +1,26 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: "Install and Build"
+    image: node:lts-buster
+    commands:
+      - yarn install --frozen-lockfile
+      - yarn next:build
+    environment:
+      NEXT_PUBLIC_API_URL:
+        from_secret: NEXT_PUBLIC_API_URL
+      NEXT_PUBLIC_APIKEY:
+        from_secret: NEXT_PUBLIC_APIKEY
+
+  - name: "Release"
+    image: node:lts-buster
+    commands:
+      - yarn semantic-release
+    depends_on:
+      - Install and Build
+    when:
+      branch:
+        include:
+          - main
