@@ -1,3 +1,10 @@
+# [1.1.0-develop.2](https://github.com/insuusvenerati/notes-frontend/compare/1.1.0-develop.1...1.1.0-develop.2) (2021-05-05)
+
+
+### Features
+
+* build and push docker images ([95c1210](https://github.com/insuusvenerati/notes-frontend/commit/95c121030c2370598df179c882fa62e6ec0ea5d4))
+
 # [1.1.0-develop.1](https://github.com/insuusvenerati/notes-frontend/compare/1.0.0...1.1.0-develop.1) (2021-05-04)
 
 
