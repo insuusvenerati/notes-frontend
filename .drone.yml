@@ -23,6 +23,24 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
+    when:
+      branch:
+        - main
+
+  - name: "Docker build dev"
+    image: plugins/docker
+    settings:
+      repo: stiforr/notes-frontend
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      tags:
+        - develop
+        - develop.${DRONE_BUILD_NUMBER}
+    when:
+      branch:
+        - develop
 
   - name: "Docker build tag"
     image: plugins/docker
