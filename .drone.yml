@@ -14,22 +14,6 @@ steps:
       NEXT_PUBLIC_APIKEY:
         from_secret: NEXT_PUBLIC_APIKEY
 
-  - name: "Release"
-    image: node:lts-buster
-    commands:
-      - yarn semantic-release
-    depends_on:
-      - Install and Build
-      - Docker build latest
-    environment:
-      GH_TOKEN:
-        from_secret: GH_TOKEN
-    when:
-      branch:
-        include:
-          - main
-          - develop
-
   - name: "Docker build latest"
     image: plugins/docker
     settings:
@@ -52,6 +36,22 @@ steps:
     when:
       event:
         - tag
+
+  - name: "Release"
+    image: node:lts-buster
+    commands:
+      - yarn semantic-release
+    depends_on:
+      - "Install and Build"
+      - "Docker build latest"
+    environment:
+      GH_TOKEN:
+        from_secret: GH_TOKEN
+    when:
+      branch:
+        include:
+          - main
+          - develop
 
 trigger:
   event:
