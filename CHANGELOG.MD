@@ -1,3 +1,10 @@
+# [1.1.0-develop.3](https://github.com/insuusvenerati/notes-frontend/compare/1.1.0-develop.2...1.1.0-develop.3) (2021-05-05)
+
+
+### Features
+
+* release on develop ([ac2aabb](https://github.com/insuusvenerati/notes-frontend/commit/ac2aabb0bd20e6e1c7347ab5e3356bc768cd0048))
+
 # [1.1.0-develop.2](https://github.com/insuusvenerati/notes-frontend/compare/1.1.0-develop.1...1.1.0-develop.2) (2021-05-05)
 
 
