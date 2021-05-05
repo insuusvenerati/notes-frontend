@@ -23,6 +23,9 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
+      build_args_from_env:
+        - NEXT_PUBLIC_API_URL
+        - NEXT_PUBLIC_APIKEY
     environment:
       NEXT_PUBLIC_API_URL:
         from_secret: NEXT_PUBLIC_API_URL
@@ -40,6 +43,9 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
+      build_args_from_env:
+        - NEXT_PUBLIC_API_URL
+        - NEXT_PUBLIC_APIKEY
       tags:
         - develop
         - develop.${DRONE_BUILD_NUMBER}
@@ -61,6 +67,9 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
+      build_args_from_env:
+        - NEXT_PUBLIC_API_URL
+        - NEXT_PUBLIC_APIKEY
     environment:
       NEXT_PUBLIC_API_URL:
         from_secret: NEXT_PUBLIC_API_URL
