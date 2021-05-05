@@ -20,6 +20,7 @@ steps:
       - yarn semantic-release
     depends_on:
       - Install and Build
+      - Docker build latest
     environment:
       GH_TOKEN:
         from_secret: GH_TOKEN
@@ -28,6 +29,30 @@ steps:
         include:
           - main
           - develop
+
+  - name: "Docker build latest"
+    image: plugins/docker
+    settings:
+      repo: stiforr/notes-frontend
+      auto_tag: true
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+
+  - name: "Docker build tag"
+    image: plugins/docker
+    settings:
+      repo: stiforr/notes-frontend
+      auto_tag: true
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+    when:
+      event:
+        - tag
+
 trigger:
   event:
     exclude:
