@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/insuusvenerati/notes-frontend/compare/1.0.0...1.1.0) (2021-05-05)
+
+
+### Features
+
+* add docker and knative support ([a71d4aa](https://github.com/insuusvenerati/notes-frontend/commit/a71d4aa2ed1dea76cd6d77bac5e26df15661dd55))
+* build and push docker images ([95c1210](https://github.com/insuusvenerati/notes-frontend/commit/95c121030c2370598df179c882fa62e6ec0ea5d4))
+* release on develop ([ac2aabb](https://github.com/insuusvenerati/notes-frontend/commit/ac2aabb0bd20e6e1c7347ab5e3356bc768cd0048))
+
 # [1.1.0-develop.3](https://github.com/insuusvenerati/notes-frontend/compare/1.1.0-develop.2...1.1.0-develop.3) (2021-05-05)
 
 
