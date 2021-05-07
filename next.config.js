@@ -1,4 +1,5 @@
 const withPWA = require("next-pwa");
+const withPreact = require("next-plugin-preact");
 
 const nextConfig = {
   future: {
@@ -14,7 +15,7 @@ const pwaConfig = {
 };
 
 if (process.env.NODE_ENV === "production") {
-  module.exports = withPWA({ ...nextConfig, ...pwaConfig });
+  module.exports = withPWA(withPreact({ ...nextConfig, ...pwaConfig }));
 } else {
-  module.exports = nextConfig;
+  module.exports = withPreact(nextConfig);
 }
