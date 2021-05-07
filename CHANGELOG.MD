@@ -1,3 +1,10 @@
+# [1.1.0-develop.4](https://github.com/insuusvenerati/notes-frontend/compare/1.1.0-develop.3...1.1.0-develop.4) (2021-05-07)
+
+
+### Features
+
+* add preact ([a838cbc](https://github.com/insuusvenerati/notes-frontend/commit/a838cbc9f676d038167d248b0aafc65fab0aec08))
+
 # [1.1.0-develop.3](https://github.com/insuusvenerati/notes-frontend/compare/1.1.0-develop.2...1.1.0-develop.3) (2021-05-05)
 
 
