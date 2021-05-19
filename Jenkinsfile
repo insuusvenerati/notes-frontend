@@ -6,7 +6,7 @@ pipeline {
 
   }
   stages {
-    stage('install') {
+    stage('install and build') {
       steps {
         sh 'yarn'
         sh 'yarn build'
