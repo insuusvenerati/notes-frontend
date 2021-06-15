@@ -25,3 +25,4 @@ notes-workspace.code-workspace
 .env
 .next
 .vercel
+out/

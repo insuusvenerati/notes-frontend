@@ -1,0 +1,6 @@
+{
+	"appId": "tech.stiforr.notes",
+	"appName": "Notes",
+	"webDir": "out",
+	"bundledWebRuntime": false
+}
