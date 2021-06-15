@@ -1,9 +1,7 @@
 const withPWA = require("next-pwa");
 
 const nextConfig = {
-  future: {
-    webpack5: true,
-  },
+  webpack5: true,
 };
 
 const pwaConfig = {
