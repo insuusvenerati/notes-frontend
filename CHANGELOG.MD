@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/insuusvenerati/notes-frontend/compare/1.1.0...1.2.0) (2021-06-15)
+
+
+### Features
+
+* update deps ([a4aa9a2](https://github.com/insuusvenerati/notes-frontend/commit/a4aa9a2bf3f0beeafa795f36d6b67b7c43f54b2e))
+
 # [1.1.0](https://github.com/insuusvenerati/notes-frontend/compare/1.0.0...1.1.0) (2021-05-05)
 
 
