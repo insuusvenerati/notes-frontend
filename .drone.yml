@@ -48,6 +48,7 @@ steps:
           - main
           - develop
 
+trigger:
   branch:
     exclude:
       - renovate/*
