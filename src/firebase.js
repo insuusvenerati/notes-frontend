@@ -1,6 +1,5 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
+import firebase from "firebase/compat/app";
+import { initializeApp, getApps } from "firebase/app";
 
 export const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_APIKEY,
@@ -11,9 +10,12 @@ export const firebaseConfig = {
   messagingSenderId: "108467448536",
   appId: "1:108467448536:web:97624481c910f177e205ad",
 };
-// Add your Firebase credentials
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
+
+let firebaseApp;
+
+if (!getApps.length) {
+  firebaseApp = initializeApp(firebaseConfig);
 }
 
-export { firebase };
+
+export { firebaseApp };

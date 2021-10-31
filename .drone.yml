@@ -1,5 +1,5 @@
 kind: pipeline
-type: docker
+type: kubernetes
 name: default
 
 steps:
@@ -31,53 +31,6 @@ steps:
         from_secret: NEXT_PUBLIC_API_URL
       NEXT_PUBLIC_APIKEY:
         from_secret: NEXT_PUBLIC_APIKEY
-    when:
-      branch:
-        - main
-
-  - name: "Docker build dev"
-    image: plugins/docker
-    settings:
-      repo: stiforr/notes-frontend
-      username:
-        from_secret: docker_username
-      password:
-        from_secret: docker_password
-      build_args_from_env:
-        - NEXT_PUBLIC_API_URL
-        - NEXT_PUBLIC_APIKEY
-      tags:
-        - develop
-        - develop.${DRONE_BUILD_NUMBER}
-    environment:
-      NEXT_PUBLIC_API_URL:
-        from_secret: NEXT_PUBLIC_API_URL
-      NEXT_PUBLIC_APIKEY:
-        from_secret: NEXT_PUBLIC_APIKEY
-    when:
-      branch:
-        - develop
-
-  - name: "Docker build tag"
-    image: plugins/docker
-    settings:
-      repo: stiforr/notes-frontend
-      auto_tag: true
-      username:
-        from_secret: docker_username
-      password:
-        from_secret: docker_password
-      build_args_from_env:
-        - NEXT_PUBLIC_API_URL
-        - NEXT_PUBLIC_APIKEY
-    environment:
-      NEXT_PUBLIC_API_URL:
-        from_secret: NEXT_PUBLIC_API_URL
-      NEXT_PUBLIC_APIKEY:
-        from_secret: NEXT_PUBLIC_APIKEY
-    when:
-      event:
-        - tag
 
   - name: "Release"
     image: node:lts-buster
@@ -86,7 +39,6 @@ steps:
     depends_on:
       - "Install and Build"
       - "Docker build latest"
-      - "Docker build dev"
     environment:
       GH_TOKEN:
         from_secret: GH_TOKEN
@@ -97,10 +49,6 @@ steps:
           - develop
 
 trigger:
-  event:
-    exclude:
-      - tag
-      - promote
   branch:
     exclude:
       - renovate/*

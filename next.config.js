@@ -2,8 +2,9 @@ const withPWA = require("next-pwa");
 const withPreact = require("next-plugin-preact");
 
 const nextConfig = {
-  future: {
-    webpack5: true,
+  webpack: (config) => {
+    config.experiments = { topLevelAwait: true };
+    return config;
   },
 };
 
