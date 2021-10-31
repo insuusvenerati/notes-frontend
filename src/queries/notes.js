@@ -22,8 +22,8 @@ export const ADD_NOTE = gql`
  */
 export const GET_NOTES = gql`
   query Notes {
-    notes(sort: "createdAt:desc") {
-      createdAt
+    notes(sort: "created_at:desc") {
+      created_at
       id
       title
       message
@@ -41,7 +41,7 @@ export const GET_NOTES = gql`
 export const GET_NOTE = gql`
   query Note($message: String) {
     notes(where: { message_contains: $message }, sort: "createdAt:desc") {
-      createdAt
+      created_at
       id
       message
       title
@@ -59,7 +59,7 @@ export const GET_USER_NOTE = gql`
     notes(where: { user: $id }) {
       title
       message
-      createdAt
+      created_at
       id
       user {
         username
@@ -77,9 +77,9 @@ export const GET_USERS = gql`
       id
       blocked
       confirmed
-      createdAt
+      created_at
       provider
-      updatedAt
+      updated_at
       username
     }
   }

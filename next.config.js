@@ -1,7 +1,10 @@
 const withPWA = require("next-pwa");
 
 const nextConfig = {
-  webpack5: true,
+  webpack: (config) => {
+    config.experiments = { topLevelAwait: true };
+    return config;
+  },
 };
 
 const pwaConfig = {

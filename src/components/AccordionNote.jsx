@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const AccordionNote = ({ note }) => {
   const router = useRouter();
-  const date = new Date(note?.createdAt).toLocaleDateString();
+  const date = new Date(note?.created_at).toLocaleDateString();
   const classes = useStyles();
   const { handleDeleteNote } = useContext(NotesContext);
   return (

@@ -1,4 +1,4 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createTheme } from "@material-ui/core";
 
 /**
  * Generates a Material UI theme given two colors and a pallete type.
@@ -8,7 +8,7 @@ import { createMuiTheme } from "@material-ui/core";
  */
 
 function myTheme(mainPrimaryColor, mainSecondaryColor, palletType) {
-  const theme = createMuiTheme({
+  return createTheme({
     palette: {
       type: palletType,
       primary: {
@@ -26,8 +26,6 @@ function myTheme(mainPrimaryColor, mainSecondaryColor, palletType) {
       },
     },
   });
-
-  return theme;
 }
 
 export default myTheme;

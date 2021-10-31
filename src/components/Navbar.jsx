@@ -5,7 +5,7 @@ import {
   CircularProgress,
   createStyles,
   Fab,
-  fade,
+  alpha,
   Grid,
   IconButton,
   InputAdornment,
@@ -27,7 +27,11 @@ import { useContext } from "react";
 import { NotesContext } from "../context/notes";
 import { ThemeContext } from "../context/theme";
 import { LoginButton } from "./LoginButton";
-import { AddNoteButton, ShowArhivedNotesButton, ShowYourNotesButton } from "./ToolbarButtons";
+import {
+  AddNoteButton,
+  ShowArhivedNotesButton,
+  ShowYourNotesButton,
+} from "./ToolbarButtons";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -52,9 +56,9 @@ const useStyles = makeStyles((theme) =>
       position: "relative",
       justifySelf: "flex-end",
       borderRadius: theme.shape.borderRadius,
-      backgroundColor: fade(theme.palette.common.white, 0.15),
+      backgroundColor: alpha(theme.palette.common.white, 0.15),
       "&:hover": {
-        backgroundColor: fade(theme.palette.common.white, 0.25),
+        backgroundColor: alpha(theme.palette.common.white, 0.25),
       },
       marginLeft: 0,
       // width: "100%",
@@ -81,7 +85,7 @@ const useStyles = makeStyles((theme) =>
       paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
       width: "100%",
     },
-  })
+  }),
 );
 
 const Navbar = () => {
@@ -101,7 +105,11 @@ const Navbar = () => {
 
   return (
     <Grid container>
-      <AppBar className="border-b-4 border-orange-600" elevation={0} position="static">
+      <AppBar
+        className="border-b-4 border-orange-600"
+        elevation={0}
+        position="static"
+      >
         <Grid item xs={12}>
           <Toolbar variant="dense">
             <Typography variant="h6">
@@ -109,14 +117,22 @@ const Navbar = () => {
             </Typography>
             <ListItem style={{ justifyContent: "flex-end" }}>
               <Fab
-                onClick={() => setDarkState(darkState === "dark" ? "light" : "dark")}
+                onClick={() =>
+                  setDarkState(darkState === "dark" ? "light" : "dark")
+                }
                 size="medium"
                 color="secondary"
               >
-                {darkState === "dark" ? <BrightnessHighIcon /> : <Brightness4Icon />}
+                {darkState === "dark" ? (
+                  <BrightnessHighIcon />
+                ) : (
+                  <Brightness4Icon />
+                )}
               </Fab>
               <LoginButton
-                setSigninOpen={() => setSigninOpen({ open: true, loading: false })}
+                setSigninOpen={() =>
+                  setSigninOpen({ open: true, loading: false })
+                }
                 signOut={signOut}
                 token={token}
               />
@@ -125,7 +141,9 @@ const Navbar = () => {
         </Grid>
         <Grid item xs={12}>
           <Toolbar classes={{ root: classes.secondaryToolbar }}>
-            <Typography variant="h4">Hello {user ? user : "User"}, welcome to Notes!</Typography>
+            <Typography variant="h4">
+              Hello {user ? user : "User"}, welcome to Notes!
+            </Typography>
           </Toolbar>
         </Grid>
 
@@ -169,7 +187,10 @@ const Navbar = () => {
                   placeholder="Search a note"
                   endAdornment={
                     <InputAdornment position="end">
-                      <IconButton onClick={() => setSearchInput("")} size="small">
+                      <IconButton
+                        onClick={() => setSearchInput("")}
+                        size="small"
+                      >
                         <ClearIcon />
                       </IconButton>
                     </InputAdornment>
