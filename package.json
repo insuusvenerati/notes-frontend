@@ -52,6 +52,8 @@
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/git": "^10.0.0",
     "@types/firebase": "^3.2.1",
+    "@types/node": "^16.11.6",
+    "@types/react": "^17.0.33",
     "@typescript-eslint/eslint-plugin": "5.2.0",
     "@typescript-eslint/parser": "5.2.0",
     "apollo": "2.33.7",

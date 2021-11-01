@@ -25,3 +25,11 @@ notes-workspace.code-workspace
 .env
 .next
 .vercel
+
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
