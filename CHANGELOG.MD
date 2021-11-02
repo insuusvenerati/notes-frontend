@@ -1,3 +1,10 @@
+# [1.3.0-develop.3](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.2...1.3.0-develop.3) (2021-11-02)
+
+
+### Bug Fixes
+
+* reorder dockerfile steps ([9068c48](https://github.com/insuusvenerati/notes-frontend/commit/9068c48bdb20c84e31319341617931ca4e542d01))
+
 # [1.3.0-develop.2](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.1...1.3.0-develop.2) (2021-11-02)
 
 
