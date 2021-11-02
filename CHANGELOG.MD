@@ -1,3 +1,16 @@
+# [1.3.0-develop.1](https://github.com/insuusvenerati/notes-frontend/compare/1.2.0...1.3.0-develop.1) (2021-10-31)
+
+
+### Bug Fixes
+
+* fixes missing preact module ([76e01f2](https://github.com/insuusvenerati/notes-frontend/commit/76e01f2e9b28b28630707873e9e9d60085b0c8a6))
+
+
+### Features
+
+* add preact ([a838cbc](https://github.com/insuusvenerati/notes-frontend/commit/a838cbc9f676d038167d248b0aafc65fab0aec08))
+* upgrade ([8877bb9](https://github.com/insuusvenerati/notes-frontend/commit/8877bb9ac187786e1016884714bf97df797cda95))
+
 # [1.2.0](https://github.com/insuusvenerati/notes-frontend/compare/1.1.0...1.2.0) (2021-06-15)
 
 
