@@ -35,8 +35,6 @@ RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
 
 # You only need to copy next.config.js if you are NOT using the default configuration
-RUN yarn global add next \
-    && yarn install
 
 COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/public ./public
@@ -47,6 +45,9 @@ COPY --from=builder /app/.pnp.loader.mjs ./.pnp.loader.mjs
 COPY --from=builder /app/.yarnrc.yml ./.yarnrc.yml
 COPY --from=builder /app/yarn.lock ./yarn.lock
 COPY --from=builder /app/package.json ./package.json
+
+RUN yarn global add next \
+    && yarn install
 
 USER nextjs
 
