@@ -46,8 +46,7 @@ COPY --from=builder /app/.yarnrc.yml ./.yarnrc.yml
 COPY --from=builder /app/yarn.lock ./yarn.lock
 COPY --from=builder /app/package.json ./package.json
 
-RUN yarn global add next \
-    && yarn install
+RUN yarn install
 
 USER nextjs
 
