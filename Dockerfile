@@ -16,7 +16,8 @@ ENV EXT_PUBLIC_APIKEY=$NEXT_PUBLIC_APIKEY
 
 WORKDIR /app
 COPY . .
-RUN yarn build
+RUN yarn install \
+    && yarn build
 
 # Production image, copy all the files and run next
 FROM node:14-alpine AS runner
@@ -34,7 +35,8 @@ RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
 
 # You only need to copy next.config.js if you are NOT using the default configuration
-RUN yarn global add next
+RUN yarn global add next \
+    && yarn install
 
 COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/public ./public
