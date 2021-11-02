@@ -1,3 +1,10 @@
+# [1.3.0-develop.4](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.3...1.3.0-develop.4) (2021-11-02)
+
+
+### Bug Fixes
+
+* remove used gatsby install ([903a81b](https://github.com/insuusvenerati/notes-frontend/commit/903a81b6b4fff2cef9879159085000fc6357de9a))
+
 # [1.3.0-develop.3](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.2...1.3.0-develop.3) (2021-11-02)
 
 
