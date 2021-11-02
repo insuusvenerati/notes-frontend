@@ -1,3 +1,12 @@
+# [1.3.0-develop.2](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.1...1.3.0-develop.2) (2021-11-02)
+
+
+### Bug Fixes
+
+* enables yarn v3 zero install ([98618aa](https://github.com/insuusvenerati/notes-frontend/commit/98618aa973d0ac0664cca1e37db426f74ed3fdcd))
+* ensure deps are installed in dockerfile ([c0f10c0](https://github.com/insuusvenerati/notes-frontend/commit/c0f10c046b6cc37de230dbdaf0ce054142183ec3))
+* updates dockerfile to work with yarn v3 ([ca76994](https://github.com/insuusvenerati/notes-frontend/commit/ca76994b612d945aefb00bfb97505748c4e1fcb4))
+
 # [1.3.0-develop.1](https://github.com/insuusvenerati/notes-frontend/compare/1.2.0...1.3.0-develop.1) (2021-10-31)
 
 
