@@ -69,7 +69,7 @@ steps:
     settings:
       repo: stiforr/notes-frontend
       cache_from:
-        - stiforr/notes-frontend:${DRONE_TAG}
+        - stiforr/notes-frontend:latest
       auto_tag: true
       username:
         from_secret: docker_username
