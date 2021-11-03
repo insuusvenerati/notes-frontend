@@ -68,8 +68,7 @@ steps:
         from_secret: HELM_REPO_USERNAME
       HELM_REPO_PASSWORD:
         from_secret: HELM_REPO_PASSWORD
-      CHART_REPO_URL:
-        from_secret: CHART_REPO_URL
+      CHART_REPO_URL: http://harbor-core.harbor.svc.cluster.local/chartrepo/stiforr
 
 trigger:
   branch:
