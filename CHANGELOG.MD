@@ -1,3 +1,10 @@
+# [1.3.0-develop.12](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.11...1.3.0-develop.12) (2021-11-03)
+
+
+### Bug Fixes
+
+* update docker image push repo ([1ecce75](https://github.com/insuusvenerati/notes-frontend/commit/1ecce75fd7587727a8f967333863736682aa8373))
+
 # [1.3.0-develop.11](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.10...1.3.0-develop.11) (2021-11-03)
 
 
