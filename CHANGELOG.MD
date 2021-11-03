@@ -1,3 +1,10 @@
+# [1.3.0-develop.8](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.7...1.3.0-develop.8) (2021-11-03)
+
+
+### Bug Fixes
+
+* cache nextjs build ([380dc7b](https://github.com/insuusvenerati/notes-frontend/commit/380dc7b20e11e52711a71f1987884c0c9909c197))
+
 # [1.3.0-develop.7](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.6...1.3.0-develop.7) (2021-11-03)
 
 
