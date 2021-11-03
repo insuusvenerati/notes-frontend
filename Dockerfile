@@ -20,7 +20,7 @@ RUN yarn install \
     && yarn build
 
 # Production image, copy all the files and run next
-FROM node:14-alpine AS runner
+FROM node:14-alpine3.14 AS runner
 ARG NEXT_PUBLIC_API_URL
 ARG NEXT_PUBLIC_APIKEY
 
