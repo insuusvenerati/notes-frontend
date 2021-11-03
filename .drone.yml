@@ -73,6 +73,10 @@ steps:
       HELM_REPO_PASSWORD:
         from_secret: HELM_REPO_PASSWORD
       CHART_REPO_URL: https://harbor.k8s.stiforr.tech/chartrepo/stiforr
+    when:
+      event:
+        include:
+          - tag
 
 trigger:
   branch:
