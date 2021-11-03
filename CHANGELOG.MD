@@ -1,3 +1,10 @@
+# [1.3.0-develop.13](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.12...1.3.0-develop.13) (2021-11-03)
+
+
+### Bug Fixes
+
+* use harbor password secret ([d353953](https://github.com/insuusvenerati/notes-frontend/commit/d3539531fbda65a52c906d32f6246fa10a34c18c))
+
 # [1.3.0-develop.12](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.11...1.3.0-develop.12) (2021-11-03)
 
 
