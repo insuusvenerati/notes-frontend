@@ -74,7 +74,7 @@ steps:
       username:
         from_secret: docker_username
       password:
-        from_secret: docker_password
+        from_secret: harbor_password
       build_args_from_env:
         - NEXT_PUBLIC_API_URL
         - NEXT_PUBLIC_APIKEY
