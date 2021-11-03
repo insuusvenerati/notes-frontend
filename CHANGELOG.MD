@@ -1,3 +1,10 @@
+# [1.3.0-develop.9](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.8...1.3.0-develop.9) (2021-11-03)
+
+
+### Bug Fixes
+
+* ci optimizations ([ff2420b](https://github.com/insuusvenerati/notes-frontend/commit/ff2420b6f38fcfb93f786b10d0f63d0829d46a15))
+
 # [1.3.0-develop.8](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.7...1.3.0-develop.8) (2021-11-03)
 
 
