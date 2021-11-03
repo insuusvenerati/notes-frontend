@@ -53,6 +53,10 @@ steps:
     pull: 'always'
     commands:
       - helm package chart/
+    when:
+      event:
+        include:
+          - tag
 
   - name: Helm Push
     image: stiforr/ci-tools:1
