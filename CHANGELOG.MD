@@ -1,3 +1,10 @@
+# [1.3.0-develop.11](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.10...1.3.0-develop.11) (2021-11-03)
+
+
+### Bug Fixes
+
+* add env vars for helm chart ([adfce69](https://github.com/insuusvenerati/notes-frontend/commit/adfce69a12cc4ad164646fedbf50d049bbd139d9))
+
 # [1.3.0-develop.10](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.9...1.3.0-develop.10) (2021-11-03)
 
 
