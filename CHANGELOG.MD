@@ -1,3 +1,13 @@
+# [1.3.0-develop.6](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.5...1.3.0-develop.6) (2021-11-03)
+
+
+### Bug Fixes
+
+* adds missing chart repo url ([e3f87f0](https://github.com/insuusvenerati/notes-frontend/commit/e3f87f01cd2eda6b359a31bc39d1b9514780f4f3))
+* commit chart.yaml ([c3b7958](https://github.com/insuusvenerati/notes-frontend/commit/c3b7958919b107d22d1d5b1e13e83acac57cdd88))
+* fixes incorrect chart repo url ([dbfc3ff](https://github.com/insuusvenerati/notes-frontend/commit/dbfc3ffdaff0d6f209648df39204ae26bfd00f62))
+* push helm chart in ci ([9f59bf5](https://github.com/insuusvenerati/notes-frontend/commit/9f59bf5cd2ce0e262875796f3dd09869da2cdac1))
+
 # [1.3.0-develop.5](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.4...1.3.0-develop.5) (2021-11-03)
 
 
