@@ -3,6 +3,28 @@ type: docker
 name: default
 
 steps:
+  - name: restore-cache-with-s3
+    image: plugins/s3-cache
+    pull: 'always'
+    when:
+      event:
+        exclude:
+          - tag
+    settings:
+      restore: true
+      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+      path-style: true
+      endpoint: https://api.minio.home.stiforr.tech
+      bucket: insuusvenerati
+      region: us-east-1
+      filename: ${DRONE_REPO_NAME}.tar.gz
+      mount:
+        - './.next'
+      access_key:
+        from_secret: minio_access_key_id
+      secret_key:
+        from_secret: minio_secret_access_key
+
   - name: "Install and Build"
     image: node:lts-buster
     commands:
@@ -13,6 +35,30 @@ steps:
         from_secret: NEXT_PUBLIC_API_URL
       NEXT_PUBLIC_APIKEY:
         from_secret: NEXT_PUBLIC_APIKEY
+
+  - name: rebuild-cache-with-s3
+    image: plugins/s3-cache
+    pull: 'always'
+    when:
+      event:
+        exclude:
+          - tag
+    settings:
+      rebuild: true
+      path-style: true
+      endpoint: https://api.minio.home.stiforr.tech
+      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+      filename: ${DRONE_REPO_NAME}.tar.gz
+      bucket: insuusvenerati
+      region: us-east-1
+      mount:
+        - './.next'
+      access_key:
+        from_secret: minio_access_key_id
+      secret_key:
+        from_secret: minio_secret_access_key
+    depends_on:
+      - "Install and Build"
 
   - name: "Docker build latest"
     image: plugins/docker
@@ -47,6 +93,9 @@ steps:
         include:
           - main
           - develop
+      event:
+        exclude:
+          - tag
 
   - name: Helm Package
     image: stiforr/ci-tools:1
