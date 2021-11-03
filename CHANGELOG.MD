@@ -1,3 +1,10 @@
+# [1.3.0-develop.10](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.9...1.3.0-develop.10) (2021-11-03)
+
+
+### Bug Fixes
+
+* use latest tag for docker cache image ([2a2be54](https://github.com/insuusvenerati/notes-frontend/commit/2a2be54caba5fc02eec0eda57ebac3713cf2016c))
+
 # [1.3.0-develop.9](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.8...1.3.0-develop.9) (2021-11-03)
 
 
