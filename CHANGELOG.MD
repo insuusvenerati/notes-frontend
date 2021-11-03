@@ -1,3 +1,10 @@
+# [1.3.0-develop.14](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.13...1.3.0-develop.14) (2021-11-03)
+
+
+### Bug Fixes
+
+* add missing registry option ([901e4fa](https://github.com/insuusvenerati/notes-frontend/commit/901e4fa47290b12f33e6d4fb9da142b1b44ec70c))
+
 # [1.3.0-develop.13](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.12...1.3.0-develop.13) (2021-11-03)
 
 
