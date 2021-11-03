@@ -67,7 +67,7 @@ steps:
   - name: "Docker build latest"
     image: plugins/docker
     settings:
-      repo: stiforr/notes-frontend
+      repo: harbor.k8s.stiforr.tech/stiforr/notes-frontend
       cache_from:
         - stiforr/notes-frontend:latest
       auto_tag: true
