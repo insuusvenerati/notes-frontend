@@ -68,6 +68,7 @@ steps:
     image: plugins/docker
     settings:
       repo: harbor.k8s.stiforr.tech/stiforr/notes-frontend
+      registry: harbor.k8s.stiforr.tech
       cache_from:
         - stiforr/notes-frontend:latest
       auto_tag: true
