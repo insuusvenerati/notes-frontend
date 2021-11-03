@@ -1,3 +1,10 @@
+# [1.3.0-develop.5](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.4...1.3.0-develop.5) (2021-11-03)
+
+
+### Bug Fixes
+
+* add semantic release helm ([8ce15b6](https://github.com/insuusvenerati/notes-frontend/commit/8ce15b64ed5704d001c58985a54df8cc42e3ef96))
+
 # [1.3.0-develop.4](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.3...1.3.0-develop.4) (2021-11-02)
 
 
