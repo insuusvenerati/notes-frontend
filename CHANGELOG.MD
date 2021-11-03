@@ -1,3 +1,11 @@
+# [1.3.0-develop.7](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.6...1.3.0-develop.7) (2021-11-03)
+
+
+### Bug Fixes
+
+* only push helm chart on tags ([611d297](https://github.com/insuusvenerati/notes-frontend/commit/611d2978df37c1747f2b51e7860a8f494faf6b19))
+* only push helm chart on tags ([f1f7ae6](https://github.com/insuusvenerati/notes-frontend/commit/f1f7ae63fec0c2cc18586486bb0c0abdd9535d68))
+
 # [1.3.0-develop.6](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.5...1.3.0-develop.6) (2021-11-03)
 
 
