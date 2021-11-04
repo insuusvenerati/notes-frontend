@@ -1,3 +1,10 @@
+# [1.3.0-develop.15](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.14...1.3.0-develop.15) (2021-11-04)
+
+
+### Bug Fixes
+
+* correct env var typo in dockerfile ([b8884b3](https://github.com/insuusvenerati/notes-frontend/commit/b8884b32a661d8725ec707fc271cc23852cd4ced))
+
 # [1.3.0-develop.14](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.13...1.3.0-develop.14) (2021-11-03)
 
 
