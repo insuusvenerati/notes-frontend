@@ -1,6 +1,6 @@
 {
   "name": "@stiforr/frontend",
-  "version": "1.3.0-develop.15",
+  "version": "1.3.0-develop.16",
   "private": true,
   "dependencies": {
     "@apollo/client": "3.4.16",

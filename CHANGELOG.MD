@@ -1,3 +1,10 @@
+# [1.3.0-develop.16](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.15...1.3.0-develop.16) (2021-11-05)
+
+
+### Bug Fixes
+
+* remove used commands from docker ([057d125](https://github.com/insuusvenerati/notes-frontend/commit/057d1258625664779ef5dda575d65c0a4c033a91))
+
 # [1.3.0-develop.15](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.14...1.3.0-develop.15) (2021-11-04)
 
 
