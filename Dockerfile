@@ -16,8 +16,7 @@ ENV NEXT_PUBLIC_APIKEY=$NEXT_PUBLIC_APIKEY
 
 WORKDIR /app
 COPY . .
-RUN yarn install \
-    && yarn build
+RUN yarn build
 
 # Production image, copy all the files and run next
 FROM node:14-alpine3.14 AS runner
@@ -45,8 +44,6 @@ COPY --from=builder /app/.pnp.loader.mjs ./.pnp.loader.mjs
 COPY --from=builder /app/.yarnrc.yml ./.yarnrc.yml
 COPY --from=builder /app/yarn.lock ./yarn.lock
 COPY --from=builder /app/package.json ./package.json
-
-RUN yarn install
 
 USER nextjs
 
