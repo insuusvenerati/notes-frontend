@@ -16,7 +16,7 @@ ENV NEXT_PUBLIC_APIKEY=$NEXT_PUBLIC_APIKEY
 
 WORKDIR /app
 COPY . .
-RUN yarn build
+RUN yarn install && yarn build
 
 # Production image, copy all the files and run next
 FROM node:14-alpine3.14 AS runner
