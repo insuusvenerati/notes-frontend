@@ -1,3 +1,10 @@
+# [1.3.0-develop.17](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.16...1.3.0-develop.17) (2021-11-05)
+
+
+### Bug Fixes
+
+* re add yarn install step ([117dbf0](https://github.com/insuusvenerati/notes-frontend/commit/117dbf00caa2bdf35d2afb1b2e2b535c12c13c5d))
+
 # [1.3.0-develop.16](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.15...1.3.0-develop.16) (2021-11-05)
 
 
