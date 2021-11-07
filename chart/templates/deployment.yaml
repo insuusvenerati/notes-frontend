@@ -43,13 +43,19 @@ spec:
               containerPort: 8080
               protocol: TCP
           livenessProbe:
-            httpGet:
-              path: /
-              port: app
+            exec:
+              command:
+                - "curl localhost:8080"
+          {{/*            httpGet:*/}}
+          {{/*              path: /*/}}
+          {{/*              port: app*/}}
           readinessProbe:
-            httpGet:
-              path: /
-              port: app
+            exec:
+              command:
+                - "curl localhost:8080"
+          {{/*            httpGet:*/}}
+          {{/*              path: /*/}}
+          {{/*              port: app*/}}
           resources:
       {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
@@ -62,5 +68,5 @@ spec:
       {{- end }}
       {{- with .Values.tolerations }}
       tolerations:
-      {{- toYaml . | nindent 8 }}
+  {{- toYaml . | nindent 8 }}
   {{- end }}
