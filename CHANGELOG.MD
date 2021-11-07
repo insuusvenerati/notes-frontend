@@ -1,3 +1,10 @@
+# [1.3.0-develop.20](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.19...1.3.0-develop.20) (2021-11-07)
+
+
+### Bug Fixes
+
+* add healthz endpoint ([0614de0](https://github.com/insuusvenerati/notes-frontend/commit/0614de0c88923255dc1e2c3e091fb1cd89541f73))
+
 # [1.3.0-develop.19](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.18...1.3.0-develop.19) (2021-11-07)
 
 
