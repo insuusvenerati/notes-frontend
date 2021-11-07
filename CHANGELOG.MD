@@ -1,3 +1,10 @@
+# [1.3.0-develop.19](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.18...1.3.0-develop.19) (2021-11-07)
+
+
+### Bug Fixes
+
+* update deployment liveness command ([550a174](https://github.com/insuusvenerati/notes-frontend/commit/550a174047723ed8f79e31001795583f388215b0))
+
 # [1.3.0-develop.18](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.17...1.3.0-develop.18) (2021-11-07)
 
 
