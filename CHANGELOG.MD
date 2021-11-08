@@ -1,3 +1,15 @@
+# [1.3.0-develop.22](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.21...1.3.0-develop.22) (2021-11-08)
+
+
+### Bug Fixes
+
+* update to mui v5 styles ([c7446e1](https://github.com/insuusvenerati/notes-frontend/commit/c7446e188f7726cab0a4f714bab6474c1d43c3e6))
+
+
+### Features
+
+* update to mui v5 initial ([c94a204](https://github.com/insuusvenerati/notes-frontend/commit/c94a20468808f6e12e6a3fa2f23cc1022fcf48c5))
+
 # [1.3.0-develop.21](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.20...1.3.0-develop.21) (2021-11-08)
 
 
