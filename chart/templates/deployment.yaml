@@ -39,17 +39,17 @@ spec:
             - name: NEXT_PUBLIC_APIKEY
               value: "{{ .Values.api.key }}"
           ports:
-            - name: app
+            - name: http
               containerPort: 8080
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /api/healthz
-              port: 8080
+              port: http
           readinessProbe:
             httpGet:
               path: /api/healthz
-              port: 8080
+              port: http
           resources:
       {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
