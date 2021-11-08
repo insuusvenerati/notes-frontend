@@ -7,7 +7,7 @@ import {
   DialogContentText,
   DialogTitle,
   TextField,
-} from "@material-ui/core";
+} from "@mui/material";
 import { AuthContext } from "context/auth";
 import { useContext } from "react";
 

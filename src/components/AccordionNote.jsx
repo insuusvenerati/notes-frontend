@@ -5,10 +5,10 @@ import {
   AccordionSummary,
   Button,
   Typography,
-} from "@material-ui/core";
-import { red } from "@material-ui/core/colors";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { makeStyles } from "@material-ui/styles";
+} from "@mui/material";
+import { red } from "@mui/material/colors";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { makeStyles } from "@mui/styles";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { NotesContext } from "../context/notes";

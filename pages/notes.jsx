@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
 import { useQuery } from "@apollo/client";
-import { CircularProgress } from "@material-ui/core";
-import { Alert } from "@material-ui/lab";
+import { CircularProgress } from "@mui/material";
+import { Alert } from '@mui/material';
 import { DynamicError } from "components/DynamicComponents";
 import { NotesContext } from "context/notes";
 import Fuse from "fuse.js";

@@ -1,4 +1,4 @@
-import { createTheme } from "@material-ui/core";
+import { createTheme, adaptV4Theme } from "@mui/material";
 
 /**
  * Generates a Material UI theme given two colors and a pallete type.
@@ -8,9 +8,9 @@ import { createTheme } from "@material-ui/core";
  */
 
 function myTheme(mainPrimaryColor, mainSecondaryColor, palletType) {
-  return createTheme({
+  return createTheme(adaptV4Theme({
     palette: {
-      type: palletType,
+      mode: palletType,
       primary: {
         main: mainPrimaryColor,
       },
@@ -25,7 +25,7 @@ function myTheme(mainPrimaryColor, mainSecondaryColor, palletType) {
         },
       },
     },
-  });
+  }));
 }
 
 export default myTheme;

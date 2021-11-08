@@ -3,7 +3,6 @@ import {
   Button,
   ButtonGroup,
   CircularProgress,
-  createStyles,
   Fab,
   alpha,
   Grid,
@@ -11,15 +10,16 @@ import {
   InputAdornment,
   InputBase,
   ListItem,
-  makeStyles,
   Toolbar,
   Typography,
-} from "@material-ui/core";
-import Brightness4Icon from "@material-ui/icons/Brightness4";
-import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
-import ChatIcon from "@material-ui/icons/Chat";
-import ClearIcon from "@material-ui/icons/Clear";
-import SearchIcon from "@material-ui/icons/Search";
+} from "@mui/material";
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import BrightnessHighIcon from "@mui/icons-material/BrightnessHigh";
+import ChatIcon from "@mui/icons-material/Chat";
+import ClearIcon from "@mui/icons-material/Clear";
+import SearchIcon from "@mui/icons-material/Search";
 import { AuthContext } from "context/auth";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) =>
     inputInput: {
       padding: theme.spacing(1, 1, 1, 0),
       // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       width: "100%",
     },
   }),
