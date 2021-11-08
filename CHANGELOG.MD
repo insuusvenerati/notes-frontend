@@ -1,3 +1,10 @@
+# [1.3.0-develop.21](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.20...1.3.0-develop.21) (2021-11-08)
+
+
+### Bug Fixes
+
+* update deployment port name to match service ([dae4d95](https://github.com/insuusvenerati/notes-frontend/commit/dae4d95313301c7ab2264cf598980fcf0335c298))
+
 # [1.3.0-develop.20](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.19...1.3.0-develop.20) (2021-11-07)
 
 
