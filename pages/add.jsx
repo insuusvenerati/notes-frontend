@@ -5,8 +5,8 @@ import {
   Grid,
   TextField,
   Typography,
-} from "@material-ui/core";
-import { Alert } from "@material-ui/lab";
+} from "@mui/material";
+import { Alert } from '@mui/material';
 import { NotesContext } from "context/notes";
 import { useRouter } from "next/router";
 import { useContext } from "react";

@@ -3,7 +3,6 @@ import {
   Button,
   ButtonGroup,
   CircularProgress,
-  createStyles,
   Fab,
   alpha,
   Grid,
@@ -11,15 +10,17 @@ import {
   InputAdornment,
   InputBase,
   ListItem,
-  makeStyles,
   Toolbar,
   Typography,
-} from "@material-ui/core";
-import Brightness4Icon from "@material-ui/icons/Brightness4";
-import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
-import ChatIcon from "@material-ui/icons/Chat";
-import ClearIcon from "@material-ui/icons/Clear";
-import SearchIcon from "@material-ui/icons/Search";
+} from "@mui/material";
+import { styled } from '@mui/material/styles';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import BrightnessHighIcon from "@mui/icons-material/BrightnessHigh";
+import ChatIcon from "@mui/icons-material/Chat";
+import ClearIcon from "@mui/icons-material/Clear";
+import SearchIcon from "@mui/icons-material/Search";
 import { AuthContext } from "context/auth";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -33,63 +34,85 @@ import {
   ShowYourNotesButton,
 } from "./ToolbarButtons";
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    root: {
-      justifyContent: "flex-end",
-    },
-    header: {
-      display: "flex",
-    },
-    secondaryToolbar: {
-      display: "flex",
-      height: 80,
-      marginLeft: 50,
-      [theme.breakpoints.up("xs")]: {
-        marginLeft: 0,
-      },
-    },
-    search: {
-      position: "relative",
-      justifySelf: "flex-end",
-      borderRadius: theme.shape.borderRadius,
-      backgroundColor: alpha(theme.palette.common.white, 0.15),
-      "&:hover": {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
-      },
+const PREFIX = 'Navbar';
+
+const classes = {
+  menuButton: `${PREFIX}-menuButton`,
+  root: `${PREFIX}-root`,
+  header: `${PREFIX}-header`,
+  secondaryToolbar: `${PREFIX}-secondaryToolbar`,
+  search: `${PREFIX}-search`,
+  searchIcon: `${PREFIX}-searchIcon`,
+  inputRoot: `${PREFIX}-inputRoot`,
+  inputInput: `${PREFIX}-inputInput`
+};
+
+const StyledGrid = styled(Grid)((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.menuButton}`]: {
+    marginRight: theme.spacing(2),
+  },
+
+  [`& .${classes.root}`]: {
+    justifyContent: "flex-end",
+  },
+
+  [`& .${classes.header}`]: {
+    display: "flex",
+  },
+
+  [`& .${classes.secondaryToolbar}`]: {
+    display: "flex",
+    height: 80,
+    marginLeft: 50,
+    [theme.breakpoints.up("xs")]: {
       marginLeft: 0,
-      // width: "100%",
-      // [theme.breakpoints.up("sm")]: {
-      //   marginLeft: theme.spacing(3),
-      //   width: "auto",
-      // },
     },
-    searchIcon: {
-      padding: theme.spacing(0, 2),
-      height: "100%",
-      position: "absolute",
-      pointerEvents: "none",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
+  },
+
+  [`& .${classes.search}`]: {
+    position: "relative",
+    justifySelf: "flex-end",
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    "&:hover": {
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
-    inputRoot: {
-      color: "inherit",
-    },
-    inputInput: {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-      width: "100%",
-    },
-  }),
-);
+    marginLeft: 0,
+    // width: "100%",
+    // [theme.breakpoints.up("sm")]: {
+    //   marginLeft: theme.spacing(3),
+    //   width: "auto",
+    // },
+  },
+
+  [`& .${classes.searchIcon}`]: {
+    padding: theme.spacing(0, 2),
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  [`& .${classes.inputRoot}`]: {
+    color: "inherit",
+  },
+
+  [`& .${classes.inputInput}`]: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    width: "100%",
+  }
+}));
 
 const Navbar = () => {
-  const classes = useStyles();
+
 
   const { loading, searchInput, setSearchInput } = useContext(NotesContext);
   const { darkState, setDarkState } = useContext(ThemeContext);
@@ -104,7 +127,7 @@ const Navbar = () => {
   }
 
   return (
-    <Grid container>
+    <StyledGrid container>
       <AppBar
         className="border-b-4 border-orange-600"
         elevation={0}
@@ -215,7 +238,7 @@ const Navbar = () => {
           </Toolbar>
         </Grid>
       </AppBar>
-    </Grid>
+    </StyledGrid>
   );
 };
 

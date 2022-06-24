@@ -1,4 +1,4 @@
-import CssBaseline from "@material-ui/core/CssBaseline";
+import CssBaseline from "@mui/material/CssBaseline";
 import { Layout } from "components/Layout";
 import { SignInModal } from "components/SigninModal";
 import { ApolloContextProvider } from "context/apollo";

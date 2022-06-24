@@ -1,5 +1,5 @@
-import { ThemeProvider } from "@material-ui/core";
-import { blue, deepOrange, deepPurple, purple } from "@material-ui/core/colors";
+import { ThemeProvider, StyledEngineProvider } from "@mui/material";
+import { blue, deepOrange, deepPurple, purple } from "@mui/material/colors";
 import { useSsrLocalStorage } from "hooks/useLocalStorage";
 import React from "react";
 import myTheme from "../theme";
@@ -16,7 +16,9 @@ export const ThemeContextProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ darkState, setDarkState }}>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </StyledEngineProvider>
     </ThemeContext.Provider>
   );
 };

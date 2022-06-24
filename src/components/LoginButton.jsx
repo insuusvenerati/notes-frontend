@@ -1,4 +1,4 @@
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 
 export const LoginButton = ({ token, setSigninOpen, signOut }) => (
   <div style={{ marginLeft: 6 }}>

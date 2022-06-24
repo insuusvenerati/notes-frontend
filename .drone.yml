@@ -3,8 +3,34 @@ type: docker
 name: default
 
 steps:
+  - name: restore-cache-with-s3
+    image: plugins/s3-cache
+    pull: 'always'
+    when:
+      event:
+        exclude:
+          - tag
+    settings:
+      restore: true
+      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+      path-style: true
+      endpoint: https://api.minio.home.stiforr.tech
+      bucket: insuusvenerati
+      region: us-east-1
+      filename: ${DRONE_REPO_NAME}.tar.gz
+      mount:
+        - './.next'
+      access_key:
+        from_secret: minio_access_key_id
+      secret_key:
+        from_secret: minio_secret_access_key
+
   - name: "Install and Build"
     image: node:lts-buster
+    when:
+      event:
+        exclude:
+          - tag
     commands:
       - yarn install --frozen-lockfile
       - yarn build
@@ -14,15 +40,42 @@ steps:
       NEXT_PUBLIC_APIKEY:
         from_secret: NEXT_PUBLIC_APIKEY
 
+  - name: rebuild-cache-with-s3
+    image: plugins/s3-cache
+    pull: 'always'
+    when:
+      event:
+        exclude:
+          - tag
+    settings:
+      rebuild: true
+      path-style: true
+      endpoint: https://api.minio.home.stiforr.tech
+      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+      filename: ${DRONE_REPO_NAME}.tar.gz
+      bucket: insuusvenerati
+      region: us-east-1
+      mount:
+        - './.next'
+      access_key:
+        from_secret: minio_access_key_id
+      secret_key:
+        from_secret: minio_secret_access_key
+    depends_on:
+      - "Install and Build"
+
   - name: "Docker build latest"
     image: plugins/docker
     settings:
-      repo: stiforr/notes-frontend
+      repo: harbor.k8s.stiforr.tech/stiforr/notes-frontend
+      registry: harbor.k8s.stiforr.tech
+      cache_from:
+        - stiforr/notes-frontend:latest
       auto_tag: true
       username:
         from_secret: docker_username
       password:
-        from_secret: docker_password
+        from_secret: harbor_password
       build_args_from_env:
         - NEXT_PUBLIC_API_URL
         - NEXT_PUBLIC_APIKEY
@@ -47,6 +100,39 @@ steps:
         include:
           - main
           - develop
+      event:
+        exclude:
+          - tag
+
+  - name: Helm Package
+    image: stiforr/ci-tools:1
+    pull: 'always'
+    commands:
+      - helm package chart/
+    when:
+      event:
+        include:
+          - tag
+
+  - name: Helm Push
+    image: stiforr/ci-tools:1
+    pull: 'always'
+    commands:
+      - /scripts/helm-push.sh
+    depends_on:
+      - 'Helm Package'
+    environment:
+      CHART_REPO_NAME:
+        from_secret: CHART_REPO_NAME
+      HELM_REPO_USERNAME:
+        from_secret: HELM_REPO_USERNAME
+      HELM_REPO_PASSWORD:
+        from_secret: HELM_REPO_PASSWORD
+      CHART_REPO_URL: https://harbor.k8s.stiforr.tech/chartrepo/stiforr
+    when:
+      event:
+        include:
+          - tag
 
 trigger:
   branch:

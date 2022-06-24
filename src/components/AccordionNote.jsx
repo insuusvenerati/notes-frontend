@@ -5,35 +5,48 @@ import {
   AccordionSummary,
   Button,
   Typography,
-} from "@material-ui/core";
-import { red } from "@material-ui/core/colors";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { makeStyles } from "@material-ui/styles";
+} from "@mui/material";
+import { styled } from '@mui/material/styles';
+import { red } from "@mui/material/colors";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { makeStyles } from "@mui/styles";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { NotesContext } from "../context/notes";
 
-const useStyles = makeStyles((theme) => ({
-  heading: {
+const PREFIX = 'AccordionNote';
+
+const classes = {
+  heading: `${PREFIX}-heading`,
+  secondaryHeading: `${PREFIX}-secondaryHeading`
+};
+
+const StyledAccordion = styled(Accordion)((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.heading}`]: {
     fontSize: theme.typography.pxToRem(15),
     flexBasis: "3%",
     flexShrink: 0,
   },
-  secondaryHeading: {
+
+  [`& .${classes.secondaryHeading}`]: {
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
     flexBasis: "3%",
     flexShrink: 0,
-  },
+  }
 }));
 
 export const AccordionNote = ({ note }) => {
   const router = useRouter();
   const date = new Date(note?.created_at).toLocaleDateString();
-  const classes = useStyles();
+
   const { handleDeleteNote } = useContext(NotesContext);
   return (
-    <Accordion>
+    <StyledAccordion>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography className={classes.heading}>
           {note?.user?.username}
@@ -60,6 +73,6 @@ export const AccordionNote = ({ note }) => {
           </>
         ) : null}
       </AccordionActions>
-    </Accordion>
+    </StyledAccordion>
   );
 };
