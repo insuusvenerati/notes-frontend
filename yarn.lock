@@ -3493,7 +3493,7 @@ __metadata:
     react-cookie: 4.1.1
     react-dom: 17.0.2
     react-error-boundary: 3.1.4
-    react-firebase-hooks: 3.0.4
+    react-firebase-hooks: 3.0.5
     react-firebaseui: 5.0.2
     semantic-release: 19.0.3
     semantic-release-helm: ^2.1.0
@@ -11924,13 +11924,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-firebase-hooks@npm:3.0.4":
-  version: 3.0.4
-  resolution: "react-firebase-hooks@npm:3.0.4"
+"react-firebase-hooks@npm:3.0.5":
+  version: 3.0.5
+  resolution: "react-firebase-hooks@npm:3.0.5"
   peerDependencies:
     firebase: ">= 8.0.0"
     react: ">= 16.8.0"
-  checksum: 12ecc7382229602f52130a3096a7244f043a78a199324cd8a1df242dff4f378a1a8a334416a8ed18910bc51c70bf809146b06da276ab1792b83ceae31ff582b3
+  checksum: 8fba4e6a7a8bf7ed0e8ae76f51d1333890ea3fcd0d3d3c028aee4a6cf603333a5f49d4af30c2ec6d11eb0c1ffeee8cb5dc0f97012808ec9ad10c5ac57290de73
   languageName: node
   linkType: hard
 

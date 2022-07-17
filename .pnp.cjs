@@ -72,7 +72,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-cookie", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:4.1.1"],
             ["react-dom", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:17.0.2"],
             ["react-error-boundary", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:3.1.4"],
-            ["react-firebase-hooks", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:3.0.4"],
+            ["react-firebase-hooks", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:3.0.5"],
             ["react-firebaseui", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:5.0.2"],
             ["semantic-release", "npm:19.0.3"],
             ["semantic-release-helm", "npm:2.1.0"],
@@ -5648,7 +5648,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-cookie", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:4.1.1"],
             ["react-dom", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:17.0.2"],
             ["react-error-boundary", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:3.1.4"],
-            ["react-firebase-hooks", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:3.0.4"],
+            ["react-firebase-hooks", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:3.0.5"],
             ["react-firebaseui", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:5.0.2"],
             ["semantic-release", "npm:19.0.3"],
             ["semantic-release-helm", "npm:2.1.0"],
@@ -15534,17 +15534,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["react-firebase-hooks", [
-        ["npm:3.0.4", {
-          "packageLocation": "./.yarn/cache/react-firebase-hooks-npm-3.0.4-0bcc16f4cd-12ecc73822.zip/node_modules/react-firebase-hooks/",
+        ["npm:3.0.5", {
+          "packageLocation": "./.yarn/cache/react-firebase-hooks-npm-3.0.5-f50888ac47-8fba4e6a7a.zip/node_modules/react-firebase-hooks/",
           "packageDependencies": [
-            ["react-firebase-hooks", "npm:3.0.4"]
+            ["react-firebase-hooks", "npm:3.0.5"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:3.0.4", {
-          "packageLocation": "./.yarn/__virtual__/react-firebase-hooks-virtual-c7c1c3e2d4/0/cache/react-firebase-hooks-npm-3.0.4-0bcc16f4cd-12ecc73822.zip/node_modules/react-firebase-hooks/",
+        ["virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:3.0.5", {
+          "packageLocation": "./.yarn/__virtual__/react-firebase-hooks-virtual-6df8fc658f/0/cache/react-firebase-hooks-npm-3.0.5-f50888ac47-8fba4e6a7a.zip/node_modules/react-firebase-hooks/",
           "packageDependencies": [
-            ["react-firebase-hooks", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:3.0.4"],
+            ["react-firebase-hooks", "virtual:f2e5284be9304909b667073d0fbfe26d06aed6197b5875f8d9c40bd46bad49f1020ba50540c09f3151a205a00d8c9c4149fd04f72b3bb7c0b5af1499bf9c1169#npm:3.0.5"],
             ["@types/firebase", "npm:3.2.1"],
             ["@types/react", "npm:17.0.33"],
             ["firebase", "npm:9.2.0"],
