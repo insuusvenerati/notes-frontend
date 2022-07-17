@@ -1,3 +1,161 @@
+# [1.3.0-develop.22](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.21...1.3.0-develop.22) (2021-11-08)
+
+
+### Bug Fixes
+
+* update to mui v5 styles ([c7446e1](https://github.com/insuusvenerati/notes-frontend/commit/c7446e188f7726cab0a4f714bab6474c1d43c3e6))
+
+
+### Features
+
+* update to mui v5 initial ([c94a204](https://github.com/insuusvenerati/notes-frontend/commit/c94a20468808f6e12e6a3fa2f23cc1022fcf48c5))
+
+# [1.3.0-develop.21](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.20...1.3.0-develop.21) (2021-11-08)
+
+
+### Bug Fixes
+
+* update deployment port name to match service ([dae4d95](https://github.com/insuusvenerati/notes-frontend/commit/dae4d95313301c7ab2264cf598980fcf0335c298))
+
+# [1.3.0-develop.20](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.19...1.3.0-develop.20) (2021-11-07)
+
+
+### Bug Fixes
+
+* add healthz endpoint ([0614de0](https://github.com/insuusvenerati/notes-frontend/commit/0614de0c88923255dc1e2c3e091fb1cd89541f73))
+
+# [1.3.0-develop.19](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.18...1.3.0-develop.19) (2021-11-07)
+
+
+### Bug Fixes
+
+* update deployment liveness command ([550a174](https://github.com/insuusvenerati/notes-frontend/commit/550a174047723ed8f79e31001795583f388215b0))
+
+# [1.3.0-develop.18](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.17...1.3.0-develop.18) (2021-11-07)
+
+
+### Bug Fixes
+
+* update deployment port name ([6f8f664](https://github.com/insuusvenerati/notes-frontend/commit/6f8f6647ff19f978e3becd5a3291007877bf7d3b))
+
+# [1.3.0-develop.17](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.16...1.3.0-develop.17) (2021-11-05)
+
+
+### Bug Fixes
+
+* re add yarn install step ([117dbf0](https://github.com/insuusvenerati/notes-frontend/commit/117dbf00caa2bdf35d2afb1b2e2b535c12c13c5d))
+
+# [1.3.0-develop.16](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.15...1.3.0-develop.16) (2021-11-05)
+
+
+### Bug Fixes
+
+* remove used commands from docker ([057d125](https://github.com/insuusvenerati/notes-frontend/commit/057d1258625664779ef5dda575d65c0a4c033a91))
+
+# [1.3.0-develop.15](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.14...1.3.0-develop.15) (2021-11-04)
+
+
+### Bug Fixes
+
+* correct env var typo in dockerfile ([b8884b3](https://github.com/insuusvenerati/notes-frontend/commit/b8884b32a661d8725ec707fc271cc23852cd4ced))
+
+# [1.3.0-develop.14](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.13...1.3.0-develop.14) (2021-11-03)
+
+
+### Bug Fixes
+
+* add missing registry option ([901e4fa](https://github.com/insuusvenerati/notes-frontend/commit/901e4fa47290b12f33e6d4fb9da142b1b44ec70c))
+
+# [1.3.0-develop.13](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.12...1.3.0-develop.13) (2021-11-03)
+
+
+### Bug Fixes
+
+* use harbor password secret ([d353953](https://github.com/insuusvenerati/notes-frontend/commit/d3539531fbda65a52c906d32f6246fa10a34c18c))
+
+# [1.3.0-develop.12](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.11...1.3.0-develop.12) (2021-11-03)
+
+
+### Bug Fixes
+
+* update docker image push repo ([1ecce75](https://github.com/insuusvenerati/notes-frontend/commit/1ecce75fd7587727a8f967333863736682aa8373))
+
+# [1.3.0-develop.11](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.10...1.3.0-develop.11) (2021-11-03)
+
+
+### Bug Fixes
+
+* add env vars for helm chart ([adfce69](https://github.com/insuusvenerati/notes-frontend/commit/adfce69a12cc4ad164646fedbf50d049bbd139d9))
+
+# [1.3.0-develop.10](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.9...1.3.0-develop.10) (2021-11-03)
+
+
+### Bug Fixes
+
+* use latest tag for docker cache image ([2a2be54](https://github.com/insuusvenerati/notes-frontend/commit/2a2be54caba5fc02eec0eda57ebac3713cf2016c))
+
+# [1.3.0-develop.9](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.8...1.3.0-develop.9) (2021-11-03)
+
+
+### Bug Fixes
+
+* ci optimizations ([ff2420b](https://github.com/insuusvenerati/notes-frontend/commit/ff2420b6f38fcfb93f786b10d0f63d0829d46a15))
+
+# [1.3.0-develop.8](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.7...1.3.0-develop.8) (2021-11-03)
+
+
+### Bug Fixes
+
+* cache nextjs build ([380dc7b](https://github.com/insuusvenerati/notes-frontend/commit/380dc7b20e11e52711a71f1987884c0c9909c197))
+
+# [1.3.0-develop.7](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.6...1.3.0-develop.7) (2021-11-03)
+
+
+### Bug Fixes
+
+* only push helm chart on tags ([611d297](https://github.com/insuusvenerati/notes-frontend/commit/611d2978df37c1747f2b51e7860a8f494faf6b19))
+* only push helm chart on tags ([f1f7ae6](https://github.com/insuusvenerati/notes-frontend/commit/f1f7ae63fec0c2cc18586486bb0c0abdd9535d68))
+
+# [1.3.0-develop.6](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.5...1.3.0-develop.6) (2021-11-03)
+
+
+### Bug Fixes
+
+* adds missing chart repo url ([e3f87f0](https://github.com/insuusvenerati/notes-frontend/commit/e3f87f01cd2eda6b359a31bc39d1b9514780f4f3))
+* commit chart.yaml ([c3b7958](https://github.com/insuusvenerati/notes-frontend/commit/c3b7958919b107d22d1d5b1e13e83acac57cdd88))
+* fixes incorrect chart repo url ([dbfc3ff](https://github.com/insuusvenerati/notes-frontend/commit/dbfc3ffdaff0d6f209648df39204ae26bfd00f62))
+* push helm chart in ci ([9f59bf5](https://github.com/insuusvenerati/notes-frontend/commit/9f59bf5cd2ce0e262875796f3dd09869da2cdac1))
+
+# [1.3.0-develop.5](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.4...1.3.0-develop.5) (2021-11-03)
+
+
+### Bug Fixes
+
+* add semantic release helm ([8ce15b6](https://github.com/insuusvenerati/notes-frontend/commit/8ce15b64ed5704d001c58985a54df8cc42e3ef96))
+
+# [1.3.0-develop.4](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.3...1.3.0-develop.4) (2021-11-02)
+
+
+### Bug Fixes
+
+* remove used gatsby install ([903a81b](https://github.com/insuusvenerati/notes-frontend/commit/903a81b6b4fff2cef9879159085000fc6357de9a))
+
+# [1.3.0-develop.3](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.2...1.3.0-develop.3) (2021-11-02)
+
+
+### Bug Fixes
+
+* reorder dockerfile steps ([9068c48](https://github.com/insuusvenerati/notes-frontend/commit/9068c48bdb20c84e31319341617931ca4e542d01))
+
+# [1.3.0-develop.2](https://github.com/insuusvenerati/notes-frontend/compare/1.3.0-develop.1...1.3.0-develop.2) (2021-11-02)
+
+
+### Bug Fixes
+
+* enables yarn v3 zero install ([98618aa](https://github.com/insuusvenerati/notes-frontend/commit/98618aa973d0ac0664cca1e37db426f74ed3fdcd))
+* ensure deps are installed in dockerfile ([c0f10c0](https://github.com/insuusvenerati/notes-frontend/commit/c0f10c046b6cc37de230dbdaf0ce054142183ec3))
+* updates dockerfile to work with yarn v3 ([ca76994](https://github.com/insuusvenerati/notes-frontend/commit/ca76994b612d945aefb00bfb97505748c4e1fcb4))
+
 # [1.3.0-develop.1](https://github.com/insuusvenerati/notes-frontend/compare/1.2.0...1.3.0-develop.1) (2021-10-31)
 
 

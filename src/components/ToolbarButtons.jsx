@@ -1,6 +1,6 @@
-import { Button } from "@material-ui/core";
-import { blue, deepOrange, green } from "@material-ui/core/colors";
-import { withStyles } from "@material-ui/styles";
+import { Button } from "@mui/material";
+import { blue, deepOrange, green } from "@mui/material/colors";
+import { withStyles } from "@mui/styles";
 
 export const AddNoteButton = withStyles((theme) => ({
   root: {

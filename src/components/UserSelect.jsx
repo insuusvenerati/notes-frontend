@@ -1,4 +1,4 @@
-import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { NotesContext } from "context/notes";
 import { useContext } from "react";
 
